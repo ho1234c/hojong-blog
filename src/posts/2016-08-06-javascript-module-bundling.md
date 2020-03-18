@@ -1,7 +1,8 @@
 ---
 path: "/javascript-modules-part-2"
 date: "2016-08-06"
-title: "JavaScript Modules Part2 A Beginner’s Guide"
+title: "JavaScript Modules Part2 A Beginner’s Guide (번역)"
+tags: ["technology", "translation"]
 ---
 
 JavaScript Modules Part2 A Beginner’s Guide

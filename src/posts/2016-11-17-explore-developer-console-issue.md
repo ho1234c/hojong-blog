@@ -2,6 +2,7 @@
 path: "/ie11-windows7-issue"
 date: "2016-11-17"
 title: "IE11 + Windows7 개발자 콘솔 에러"
+tags: ["technology"]
 ---
 
 windows7환경의 IE11에서 개발자 콘솔 트러블슈팅

@@ -2,6 +2,7 @@
 path: "/javascript-execution-context"
 date: "2017-07-11"
 title: "JavaScript Execution context"
+tags: ["technology"]
 ---
 
 javscript의 내부, Execution context에 대해서

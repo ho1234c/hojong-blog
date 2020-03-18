@@ -31,6 +31,12 @@ const date = css`
 `
 
 const blogPost = css`
+  a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    color: #00c1bb;
+  }
+
   @media only screen and (max-device-width: 480px) {
     code {
       font-size: 14px;

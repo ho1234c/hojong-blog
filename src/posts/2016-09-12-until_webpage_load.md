@@ -2,6 +2,7 @@
 path: "/tcp-ip-dns"
 date: "2016-09-12"
 title: "TCP/IP, DNS"
+tags: ["technology"]
 ---
 
 

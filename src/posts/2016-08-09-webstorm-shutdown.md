@@ -2,6 +2,7 @@
 path: "/webstorm-issue"
 date: "2016-08-09"
 title: "웹스톰 메모리 셋팅, shutdown issue"
+tags: ["technology"]
 ---
 
 웹스톰에서 shutdown되는 issue에 대한 트러블슈팅

@@ -2,6 +2,7 @@
 path: "/docker-nodejs"
 date: "2017-01-31"
 title: "Docker로 Nodejs서버 배포하기"
+tags: ["technology"]
 ---
 
 Docker를 통해 nodejs 서버를 배포하는 것에 대해 포스팅합니다.

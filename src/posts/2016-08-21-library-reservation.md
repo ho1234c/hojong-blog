@@ -2,6 +2,7 @@
 path: "/library-reservation"
 date: "2016-08-21"
 title: "도서관 자리 예약 자동화하기"
+tags: ["technology"]
 ---
 
 Python으로 도서관 자리 예약시스템 만들기

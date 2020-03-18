@@ -2,6 +2,7 @@
 path: "/web-design-pattern"
 date: "2016-08-25"
 title: "Design Pattern - MV*"
+tags: ["technology"]
 ---
 
 

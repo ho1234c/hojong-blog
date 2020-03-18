@@ -2,6 +2,7 @@
 path: "/2018-moroco-4"
 date: "2018-10-18"
 title: "모로코여행 - 4"
+tags: ["travel"]
 ---
 
 ## 프라이빗투어

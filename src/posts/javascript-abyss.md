@@ -2,6 +2,7 @@
 path: "/javascript-abyss"
 date: "2019-02-06"
 title: "JavaScript Abyss"
+tags: ["technology"]
 ---
 
 자바스크립트는 왜그럴까

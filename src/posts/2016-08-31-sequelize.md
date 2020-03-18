@@ -2,6 +2,7 @@
 path: "/sequelize"
 date: "2016-08-31"
 title: "Sequelize 시작하기"
+tags: ["technology"]
 ---
 
 

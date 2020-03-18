@@ -2,6 +2,7 @@
 path: "/blockchain-guide"
 date: "2018-02-02"
 title: "The authoritative guide to blockchain development (번역)"
+tags: ["technology", "translation"]
 ---
 
 

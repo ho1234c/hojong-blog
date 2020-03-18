@@ -2,6 +2,7 @@
 path: "/design-korea-2016"
 date: "2016-11-09"
 title: "Design Korea 2016 짧은 후기"
+tags: ["experience"]
 ---
 
 Design Korea 2016을 다녀와서..
