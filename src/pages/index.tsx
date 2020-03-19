@@ -16,15 +16,38 @@ const mainWrapper = css`
   }
 `
 
+const tagContainer = css`
+  display: flex;
+  margin: 20px 0;
+`
+
+const eachTag = css`
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: #ebf1fe;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  color: #5183f5;
+  font-weight: lighter;
+  cursor: pointer;
+`
+
 const post = css`
   height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  text-decoration: none;
+  margin: 0 -1.45rem;
+  padding: 0 1.45rem;
   a {
     color: inherit;
+  }
+  &:hover {
+    background-color: #f4f4f4;
   }
 `
 
@@ -61,25 +84,23 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <div>
+      <div className={cx(tagContainer)}>
         {tagList.map(tag => (
-          <div>{tag}</div>
+          <div className={cx(eachTag)}>{tag}</div>
         ))}
       </div>
-      <div className={cx(mainWrapper)}>
+      <section className={cx(mainWrapper)}>
         {nodes.map(({ frontmatter }) => (
-          <Link
-            to={frontmatter.path}
-            className={cx(post)}
-            key={frontmatter.title}
-          >
-            <div className={cx(postTitle)}>{frontmatter.title}</div>
-            <div className={cx(postDate)}>
-              {dayjs(frontmatter.date).format("MMM DD. YYYY")}
-            </div>
+          <Link to={frontmatter.path} key={frontmatter.title}>
+            <article className={cx(post)}>
+              <div className={cx(postTitle)}>{frontmatter.title}</div>
+              <div className={cx(postDate)}>
+                {dayjs(frontmatter.date).format("MMM DD. YYYY")}
+              </div>
+            </article>
           </Link>
         ))}
-      </div>
+      </section>
     </Layout>
   )
 }

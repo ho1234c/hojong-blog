@@ -8,17 +8,20 @@ const headerWrapper = css`
   box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
+  z-index: 1;
 `
 
 const header = css`
   margin: 0 auto;
   max-width: 850px;
   padding: 20px 1.45rem;
+  box-sizing: border-box;
 `
 
 const headerLink = css`
   text-decoration: none;
   color: inherit;
+  font-weight: 900;
 `
 
 const Header = ({ siteTitle }: { siteTitle: string }) => (

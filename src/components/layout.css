@@ -13,6 +13,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+  box-sizing: border-box;
+}
 article,
 aside,
 details,
@@ -43,6 +46,10 @@ progress {
 [hidden],
 template {
   display: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 a:active,

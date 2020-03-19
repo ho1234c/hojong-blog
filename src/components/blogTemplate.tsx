@@ -31,6 +31,9 @@ const date = css`
 `
 
 const blogPost = css`
+  img {
+    width: 100%;
+  }
   a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;

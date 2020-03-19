@@ -9,7 +9,8 @@ import "./layout.css"
 const layout = css`
   margin: 0 auto;
   max-width: 850px;
-  padding: 1.45rem 1.45rem;
+  padding: 1.45rem;
+  box-sizing: border-box;
 `
 
 const main = css`
