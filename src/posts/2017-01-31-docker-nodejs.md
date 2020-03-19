@@ -5,15 +5,6 @@ title: "Docker로 Nodejs서버 배포하기"
 tags: ["technology"]
 ---
 
-Docker를 통해 nodejs 서버를 배포하는 것에 대해 포스팅합니다.
-<!-- more --> 
-<style>
-img{ 
-  display: block;
-  margin : 0 auto;
-}
-</style>
-
 ![docker](/images/2017-01-31-docker-nodejs/1.png)
 
 <small>도커의 공식로고. 이름은 Moby Dock. 옷에 박혀 있어도 입고 다닐 수 있을 정도로 매우 귀엽다.</small>

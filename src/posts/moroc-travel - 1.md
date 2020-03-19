@@ -88,7 +88,8 @@ tags: ["travel"]
 
 12시간 30분동안 버스를 타고 온건 단순히 먼 거리를 이동하기 위해서가 아니라 그들의 삶을 좀더 가까이서 보기위함인듯했다.
 
-<img src="../images/travel/IMG_3153.jpg" width="100%" style="margin: 10px 0">
+![모하네의 일출](../images/travel/IMG_3153.jpg)
+
 모하네의 일출
 
 ![모로코의 빨래](../images/travel/IMG_3171.jpg)

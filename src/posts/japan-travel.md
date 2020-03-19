@@ -28,8 +28,7 @@ tags: ["travel"]
 
 아마도 세상에서 가장 가성비높은 행복은 맛있는 음식일 것이다!
 
-<img src="/images/japan-travel/sushi.jpeg" style="margin: 10px 0; display: inline-block;">
-
+![스시](../images/japan-travel/sushi.jpeg)
 ## 작은것
 
 디테일이 느껴지는 제품과 서비스가 인상깊었다. “디테일”은 어쩌면 별 것 아닌 작은부분일 수 있다. 하지만 나는 이 별것아닌것들에 크게 휘둘린다.
@@ -38,22 +37,10 @@ tags: ["travel"]
 
 나도 어떤 서비스를 만드는 회사에서 일하고 있지만, 이런 부분들을 미처 생각하지못해서 좀 더 잘 만들수 있는 기회를 놓칠때가 많다. 데드라인과 같은 현실적 요건에 치이다보면 다른 서비스에서 감동받은 부분들을 막상 내가 만들때 싣지 못하는것 같다. 혹은 어쩌면 “Start small하게 할꺼야!” 라는 말로 변명하고 있는 것일 수도 있다. 작게 시작하는건 작은만큼 더 단단하게 시작하라는 이야기일 수 있는데도말이다. 사용하기 편한제품을 만들고싶다.
 
-<figure class="image">
-  <img src="/images/japan-travel/Ladder.jpeg" width="100%">
-  <figcaption>내가 묵었던 게스트하우스 2층침대 사다리. 사다리의 오른쪽 기둥을 잡고 올리가기 편하다.</figcaption>
-</figure>
+![사다리](../images/japan-travel/Ladder.jpeg)
 
-<figure class="image">
-  <img src="/images/japan-travel/train.png" width="100%">
-  <figcaption>일본의 공항철도 노선도. 나는 일본어를 한글자도 모르지만 역에 적혀있는 숫자로 어떤역을 지나고 있는지 알 수 있었다.</figcaption>
-</figure>
+![노선도](../images/japan-travel/train.jpeg)
 
 ---
 
 일본여행은 맛있었다. 다음 여행에도 많이 먹고, 더 많이 느끼고, 더 더 많이 행복했으면 좋겠다.
-
-<style>
-figcaption {
-  padding: 10px;
-}
-</style>

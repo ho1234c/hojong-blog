@@ -8,18 +8,6 @@ tags: ["technology", "translation"]
 
 <a href="https://medium.freecodecamp.org/the-authoritative-guide-to-blockchain-development-855ab65b58bc" target="_blank"> Haseeb Qureshi님의 The authoritative guide to blockchain development</a>를 번역한 글입니다. 오역 및 의역이 있을 수 있습니다. 고유명사가 많아서 원문과 함께 보시는걸 추천합니다.
 
-<!-- more --> 
-
-<style>
-
-img{ 
-  display: block;
-  margin : 0 auto;
-}
-</style>
-
-
-
 -----
 
 암호화폐, ICO들, 마법같은 인터넷상의 돈-- 매우 흥미로운일이고, 당신같은 개발자들은 이것에 빠지고싶을겁니다. 어디서부터 시작해야할까요?

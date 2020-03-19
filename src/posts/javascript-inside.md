@@ -5,15 +5,6 @@ title: "JavaScript Execution context"
 tags: ["technology"]
 ---
 
-javscript의 내부, Execution context에 대해서
-<!--more-->
-
-<style>
-img{ 
-  display: block;
-  margin : 0 auto;
-}
-</style>
 
 어떤 meetup에서 였는지 아니면 책이었는지 잘 모르겠지만 **"여러분은 자바스크립트에 대해 잘 모릅니다."** 라는 이야기를 들은적이 있다. **"잘 모르지만 쉽다고 생각해서 공부하려고 하지않습니다."** 라는 말을 덧붙였던 기억이 난다.
 

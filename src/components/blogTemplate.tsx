@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { cx, css } from "emotion"
 import Layout from "./layout"
 import dayjs from "dayjs"
+import SEO from "./seo"
 
 interface Props {
   data: {
@@ -37,7 +38,7 @@ const blogPost = css`
   a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
-    color: #00c1bb;
+    color: #e2777a;
   }
 
   @media only screen and (max-device-width: 480px) {
@@ -56,6 +57,7 @@ export default function Template({
     <Layout>
       <div className="blog-post-container">
         <div className={cx(titleWrapper)}>
+          <SEO title={frontmatter.title}></SEO>
           <div className={cx(title)}>{frontmatter.title}</div>
           <div className={cx(date)}>
             {dayjs(frontmatter.date).format("MMM DD. YYYY")}

@@ -5,17 +5,7 @@ title: "JavaScript Abyss"
 tags: ["technology"]
 ---
 
-자바스크립트는 왜그럴까
-<!--more-->
-
-<style>
-img{ 
-  display: block;
-  margin : 0 auto;
-}
-</style>
-
-<img src="/images/javascript-abyss/js-inventing.png" alt="js-inventing" style="width:400px;"/>
+![절망](../images/javascript-abyss/js-inventing.png)
 
 자바스크립트와 관련된 유명한 짤이다. 처음에는 별 생각없이 넘겼는데, 다시보니 왜 그럴까 궁금해졌다. 그래서 어쩌면 쓸모없어 보이는것들을 가볍게 정리하려한다. 깊이들어가면 끝도없기때문에 스스로 왜 그런지 납득할 정도로만.
 

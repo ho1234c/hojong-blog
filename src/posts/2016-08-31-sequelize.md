@@ -5,14 +5,6 @@ title: "Sequelize 시작하기"
 tags: ["technology"]
 ---
 
-
-
-javascript의 ORM, Sequelize
-<!-- more --> 
-<style>
-img{ margin: 0 auto; display: block;}
-</style>
-
 Nodejs라고 하면 MongoDB로 대표되는 NoSQL을 떠올리기 마련이다. 하지만 대규모 요청로 인한 성능이 저하되는 문제를 겪는 경우가 아니면 굳이 익숙하지 않은 NoSQL을 사용할 필요가 없다. Nodejs에서도 당연히 RDB가 필요한 경우가 많다. 이때 쿼리를 직접 코드에 사용할 수도 있지만 여러가지 불편한 점이 많기 ORM(Object Relational Mapping)을 사용하면 편리하다.
 
 처음 배울 때부터 DB에 접근하려면 당연히 SQL 질의문을 사용해야한다는 것에 익숙하다보니 ORM이 뭔지 잘 이해하지 못했다. ORM의 뜻을 정확하게 이해하는 것이 왜 편한지를 이해하는데 도움이 많이 되는것 같다.

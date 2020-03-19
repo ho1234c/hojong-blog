@@ -44,10 +44,7 @@ soft skill과 hard skill. 학생시절의 나는 친구들과는 물론 교수�
 그렇게 엉금엉금 레거시의 버그수정도 따라가기 벅찰때쯤, 새로운 프론트개발자분이 입사했고, 그 분이 업무에 적응할 때 쯤, 약간은 무리해서 여러사람들의 도움(사람이 하는 테스트)을 받아 리팩토링 코드를 라이브했다. 사실상 모든 로직을 다시짰으며, 배포프로세스도 완전히 바꿨다.
 17개월전에 짜기 시작한 코드가 우여곡절끝에 드디어 유저에게 도달한것이다.
 
-<figure class="image">
-  <img src="/images/refactoring/analyzer.png" width="100%">
-  <figcaption>webpack-analyzer</figcaption>
-</figure>
+![analyzer](../images/refactoring/analyzer.png)
 
 경험부족한 개발자이기에, 긴 리팩토링 후에 여러가지를 느낄 수 있었다.
 

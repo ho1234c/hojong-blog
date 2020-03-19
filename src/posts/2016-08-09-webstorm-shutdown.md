@@ -5,11 +5,6 @@ title: "웹스톰 메모리 셋팅, shutdown issue"
 tags: ["technology"]
 ---
 
-웹스톰에서 shutdown되는 issue에 대한 트러블슈팅
-<!-- more --> 
-<style>
-img{ margin: 0 auto; display: block;}
-</style>
 우선, 나의 노트북은 이와같은 환경의 윈도우7 이다.
 
 ![1](/images/2016-08-09-webstorm-shutdown/1.png)

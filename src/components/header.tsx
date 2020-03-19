@@ -16,6 +16,7 @@ const header = css`
   max-width: 850px;
   padding: 20px 1.45rem;
   box-sizing: border-box;
+  font-size: 20px;
 `
 
 const headerLink = css`
@@ -27,11 +28,9 @@ const headerLink = css`
 const Header = ({ siteTitle }: { siteTitle: string }) => (
   <header className={cx(headerWrapper)}>
     <div className={cx(header)}>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/" className={cx(headerLink)}>
-          {siteTitle}
-        </Link>
-      </h1>
+      <Link to="/" className={cx(headerLink)}>
+        {siteTitle}
+      </Link>
     </div>
   </header>
 )

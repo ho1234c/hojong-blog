@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import { cx, css } from "emotion"
@@ -18,21 +18,25 @@ const mainWrapper = css`
 
 const tagContainer = css`
   display: flex;
+  flex-wrap: wrap;
   margin: 20px 0;
 `
 
 const eachTag = css`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 0.85rem;
   padding: 0.5rem 0.75rem;
-  background: #ebf1fe;
+  background: #feebeb;
   border-radius: 4px;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #5183f5;
+  color: #f55151;
   font-weight: lighter;
   cursor: pointer;
+  min-width: 80px;
 `
 
 const post = css`
@@ -62,6 +66,10 @@ const postDate = css`
 `
 
 export default function IndexPage() {
+  const [postList, setPostList] = useState<Post[]>([])
+  const [tagList, setTagList] = useState<string[]>([])
+  const [selectedTag, setSelectedTag] = useState<string>("")
+
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
@@ -76,30 +84,44 @@ export default function IndexPage() {
       }
     }
   `)
-  const { allMarkdownRemark } = data
-  const { nodes }: { nodes: Post[] } = allMarkdownRemark
-  const tagList = Array.from(
-    new Set(nodes.map(node => node.frontmatter.tags).flat())
-  )
+
+  useEffect(() => {
+    const { allMarkdownRemark } = data
+    const { nodes }: { nodes: Post[] } = allMarkdownRemark
+    const tagList = Array.from(
+      new Set(nodes.map(node => node.frontmatter.tags).flat())
+    )
+    setPostList(nodes)
+    setTagList(tagList)
+  }, [])
 
   return (
     <Layout>
       <div className={cx(tagContainer)}>
+        <div className={cx(eachTag)} onClick={() => setSelectedTag("")}>
+          all
+        </div>
         {tagList.map(tag => (
-          <div className={cx(eachTag)}>{tag}</div>
+          <div className={cx(eachTag)} onClick={() => setSelectedTag(tag)}>
+            {tag}
+          </div>
         ))}
       </div>
       <section className={cx(mainWrapper)}>
-        {nodes.map(({ frontmatter }) => (
-          <Link to={frontmatter.path} key={frontmatter.title}>
-            <article className={cx(post)}>
-              <div className={cx(postTitle)}>{frontmatter.title}</div>
-              <div className={cx(postDate)}>
-                {dayjs(frontmatter.date).format("MMM DD. YYYY")}
-              </div>
-            </article>
-          </Link>
-        ))}
+        {postList
+          .filter(post =>
+            selectedTag ? post.frontmatter.tags.includes(selectedTag) : true
+          )
+          .map(({ frontmatter }) => (
+            <Link to={frontmatter.path} key={frontmatter.title}>
+              <article className={cx(post)}>
+                <div className={cx(postTitle)}>{frontmatter.title}</div>
+                <div className={cx(postDate)}>
+                  {dayjs(frontmatter.date).format("MMM DD. YYYY")}
+                </div>
+              </article>
+            </Link>
+          ))}
       </section>
     </Layout>
   )

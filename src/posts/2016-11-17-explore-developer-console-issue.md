@@ -5,12 +5,6 @@ title: "IE11 + Windows7 개발자 콘솔 에러"
 tags: ["technology"]
 ---
 
-windows7환경의 IE11에서 개발자 콘솔 트러블슈팅
-<!-- more --> 
-
-<style>
-img{ margin: 0 auto; display: block;}
-</style>
 
 평소에 IE를 잘 사용하지 않지만 우리나라 특성상 IE를 고려해서 개발을 할 수 밖에없다. 그래서 IE를 간만에 켰는데
 개발자콘솔이 먹통이 되고 에러를 띄웠다.
