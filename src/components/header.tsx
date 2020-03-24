@@ -1,7 +1,7 @@
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { cx, css } from "emotion"
 import React, { useLayoutEffect, useRef, useState } from "react"
-import { useLocation } from "@reach/router"
+// import { useLocation } from "@reach/router"
 
 const headerWrapper = css`
   background-color: #fff;
@@ -33,23 +33,19 @@ const Header: React.FC<Props> = props => {
   const headerRef = useRef<HTMLElement>(null)
   const [scrollPos, setScrollPos] = useState<number>(0)
   const [headerMarginTop, setHeadermarginTop] = useState<number>(0)
-  const { pathname } = useLocation()
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        nodes {
-          frontmatter {
-            path
-            title
-          }
-        }
-      }
-    }
-  `)
-  console.log(data.allMarkdownRemark.nodes)
-  console.log(
-    data.allMarkdownRemark.nodes.filter(e => e.frontmatter.path === pathname)
-  )
+  // const { pathname } = useLocation()
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allMarkdownRemark {
+  //       nodes {
+  //         frontmatter {
+  //           path
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   useLayoutEffect(() => {
     const onScroll = () => {
