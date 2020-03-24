@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { cx, css } from "emotion"
+import { css } from "@emotion/core"
 import Header from "./header"
 import "./layout.css"
 
@@ -27,7 +27,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main className={cx(layout)}>{children}</main>
+      <main css={[layout]}>{children}</main>
     </>
   )
 }

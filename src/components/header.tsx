@@ -1,5 +1,5 @@
 import { useStaticQuery, Link, graphql } from "gatsby"
-import { cx, css } from "emotion"
+import { css } from "@emotion/core"
 import React, { useLayoutEffect, useRef, useState } from "react"
 // import { useLocation } from "@reach/router"
 
@@ -65,11 +65,11 @@ const Header: React.FC<Props> = props => {
   return (
     <header
       style={{ marginTop: `${headerMarginTop}px` }}
-      className={cx(headerWrapper)}
+      css={[headerWrapper]}
       ref={headerRef}
     >
-      <div className={cx(header)}>
-        <Link to="/" className={cx(headerLink)}>
+      <div css={[header]}>
+        <Link to="/" css={[headerLink]}>
           {props.siteTitle}
         </Link>
       </div>

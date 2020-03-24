@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { cx, css } from "emotion"
+import { css } from "@emotion/core"
 import Layout from "./layout"
 import dayjs from "dayjs"
 import SEO from "./seo"
@@ -65,18 +65,15 @@ export default function Template({ data }: Props) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <div className={cx(postWrapper)}>
-        <div className={cx(titleWrapper)}>
+      <div css={[postWrapper]}>
+        <div css={[titleWrapper]}>
           <SEO title={frontmatter.title}></SEO>
-          <div className={cx(title)}>{frontmatter.title}</div>
-          <div className={cx(date)}>
+          <div css={[title]}>{frontmatter.title}</div>
+          <div css={[date]}>
             {dayjs(frontmatter.date).format("MMM DD. YYYY")}
           </div>
         </div>
-        <div
-          className={cx(content)}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div css={[content]} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   )

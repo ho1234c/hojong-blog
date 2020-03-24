@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { cx, css } from "emotion"
+import { css } from "@emotion/core"
 import dayjs from "dayjs"
 import Layout from "../components/layout"
 import { PostMeta } from "../@types"
@@ -97,30 +97,26 @@ const IndexPage: React.FC = () => {
 
   return (
     <Layout>
-      <section className={cx(tagContainer)}>
-        <div className={cx(eachTag)} onClick={() => setSelectedTag("")}>
+      <section css={[tagContainer]}>
+        <div css={[eachTag]} onClick={() => setSelectedTag("")}>
           all
         </div>
         {tagList.map(tag => (
-          <div
-            key={tag}
-            className={cx(eachTag)}
-            onClick={() => setSelectedTag(tag)}
-          >
+          <div key={tag} css={[eachTag]} onClick={() => setSelectedTag(tag)}>
             {tag}
           </div>
         ))}
       </section>
-      <section className={cx(mainWrapper)}>
+      <section css={[mainWrapper]}>
         {postList
           .filter(post =>
             selectedTag ? post.frontmatter.tags.includes(selectedTag) : true
           )
           .map(({ frontmatter }) => (
             <Link to={frontmatter.path} key={frontmatter.title}>
-              <article className={cx(post)}>
-                <div className={cx(postTitle)}>{frontmatter.title}</div>
-                <div className={cx(postDate)}>
+              <article css={[post]}>
+                <div css={[postTitle]}>{frontmatter.title}</div>
+                <div css={[postDate]}>
                   {dayjs(frontmatter.date).format("MMM DD. YYYY")}
                 </div>
               </article>
