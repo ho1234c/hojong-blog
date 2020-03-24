@@ -5,6 +5,7 @@ module.exports = {
     author: `Jongho Jeong`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
@@ -66,12 +67,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
