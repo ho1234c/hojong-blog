@@ -4,3 +4,5 @@ export type PostMeta = {
   path: string
   tags: string[]
 }
+
+export type ScrollDirection = "up" | "down"

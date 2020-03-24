@@ -5,11 +5,9 @@ import Layout from "./layout"
 import dayjs from "dayjs"
 import SEO from "./seo"
 
-interface Props {
-  data: {
-    markdownRemark: any
-  }
-}
+const postWrapper = css`
+  padding-top: 1rem;
+`
 
 const titleWrapper = css`
   display: flex;
@@ -31,7 +29,7 @@ const date = css`
   align-items: flex-end;
 `
 
-const blogPost = css`
+const content = css`
   img {
     width: 100%;
   }
@@ -39,6 +37,9 @@ const blogPost = css`
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
     color: #e2777a;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media only screen and (max-device-width: 480px) {
@@ -46,16 +47,25 @@ const blogPost = css`
       font-size: 14px;
     }
   }
+
+  .language-text {
+    background-color: #ffafaf3d;
+    color: inherit;
+  }
 `
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}: Props) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+interface Props {
+  data: {
+    markdownRemark: any
+  }
+}
+
+export default function Template({ data }: Props) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <div className="blog-post-container">
+      <div className={cx(postWrapper)}>
         <div className={cx(titleWrapper)}>
           <SEO title={frontmatter.title}></SEO>
           <div className={cx(title)}>{frontmatter.title}</div>
@@ -64,7 +74,7 @@ export default function Template({
           </div>
         </div>
         <div
-          className={cx(blogPost)}
+          className={cx(content)}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

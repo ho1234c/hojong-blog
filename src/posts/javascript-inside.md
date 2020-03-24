@@ -17,7 +17,7 @@ tags: ["technology"]
 ## What is Execution context?
 자바스크립트는 스크립트언어이기 때문에 라인별로 코드를 실행한다. 하지만 브라우저에서 자바스크립트가 실행되는 환경은 싱글스레드이기 때문에 한번에 한가지 일밖에 처리할 수 없다. 따라서 자바스크립트는 interpreting이 진행되기 전에 콜스택을 만든다. 그리고 콜스택에 쌓이 함수들은 **어떤 환경에서 실행할 것인가**에 대한 정보가 필요하다. 이 정보를 담고있는 객체를 Execution context, 줄여서 EC라 부르고 불려진 EC 들의 Collection을 EC stack이라고 한다. EC는 함수를 호출할 때 새롭게 생성되고 **return될 때 파괴된다.** 브라우저는 EC stack의 최상단부터 실행하고 끝나면 stack에서 pop시킨다. 또한 EC stack의 최하단에는 항상 Global EC가 있고 브라우저(혹은 탭)가 종료될 때까지 유지된다. 
 
-![ec](/images/javascript-inside/ec.png)
+![ec](../images/javascript-inside/ec.png)
 
 ## Execution context의 구조
 Execution context는 세가지로 구성된다.
@@ -29,7 +29,7 @@ EC를 차례로 중첩해서 가지고 있는 Collection. **현재의 Variable O
 #### this Binding
 현재 Context가 참조하고 있는 객체. 객체 속의 함수(메소드)일때와 this를 직접 지정해주는 형식으로 함수를 호출 했을 때를 제외하곤 항상 **전역객체**(브라우저에선 window객체, Nodejs에선 global객체)를 가르킨다.
 
-![ec-structure](/images/javascript-inside/ec-structure.png)
+![ec-structure](../images/javascript-inside/ec-structure.png)
 
 ## 코드의 실행
 자바스크립트에서 context에는 Global, Function, Eval의 세가지가 있다. 일반적으로 실행가능한 코드는 Global context와 Function context에서 실행 된다.
@@ -46,7 +46,7 @@ Variable object가 현재 Context에 선언된 변수와 함수로 채워진다.
 - **Determine `this`**
 이 Context에서this에 어떤 객체를 할당 할지 결정한다. 특별한 경우가아니라면 Global object가 할당된다.
 
-![code-start](/images/javascript-inside/code-start.png)
+![code-start](../images/javascript-inside/code-start.png)
 
 #### Activation / Execution Stage (Global context)
 실행되어야 할 코드를 해석하고 실행한다. 변수가 실제로 할당되며 이때, 다시 함수가 실행되면 새로운 EC가 형성된다.
@@ -59,7 +59,7 @@ Activation Object가 현재 Context에 선언된 변수와 함수로 채워진�
 - **Determine `this`**
 Function context의 경우, 호출한 객체로부터 this가 결정된다. 이 함수를 호출한 caller가 객체가 아니라면 Global object가 된다.
 
-![code-start-function](/images/javascript-inside/code-start-function.png)
+![code-start-function](../images/javascript-inside/code-start-function.png)
 
 #### Activation / Execution Stage (Function context)
 실행해야할 코드를 해석하고 실행한다. 변수를 할당하고 만약 변수를 찾을 수 없다면 Scope chain을 통해 찾는다.

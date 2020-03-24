@@ -12,43 +12,43 @@ tags: ["experience"]
 디자인관련 전시회는 한번도 가본적이 없었지만 나는 디자인도 좋아하기 때문에 최근에 디자인코리아 2016이 열린다는 소식을 듣고 가보기로 했다.
 찾아보니 디자인 종합 비즈니스 페스티벌이라고 소개한다. 디자인 산업의 역량을 키우고 디자인 트랜드를 전파해서 결국 범국민적으로 디자인을 발전시키겠다는 비전을 가지고 있는 전시회이다.
 
-![dk2016](/images/2016-11-09-design-korea-2016-review/10.gif)
+![dk2016](../images/2016-11-09-design-korea-2016-review/10.gif)
 
 고양 킨텍스 제1전시관에서 5일에 걸쳐 진행된다. 참가비는 5천원선인데 사전구매를 하면 더 저렴하게 표를 구매할 수 있다.
 이름이 디자인 코리아인 만큼 큰 규모였다.
 
-![poster](/images/2016-11-09-design-korea-2016-review/1.png)
+![poster](../images/2016-11-09-design-korea-2016-review/1.png)
 
 어떻게 정해졌는지는 모르지만 11월이 디자인의 달이라는걸 처음알았다. 2003년부터 이어져왔다는 걸 보니 전통있는 전시회인것같다.
 
-![코버워치](/images/2016-11-09-design-korea-2016-review/4.png)
+![코버워치](../images/2016-11-09-design-korea-2016-review/4.png)
 
 전시회장에 들어가서 뭔가 익숙한 느낌을 받았는데, 올해 1월에 학교지원으로 참석했던 CES 2016과 비슷했다. 물론 규모는 비할바가
 아니지만 제품들이 전시되어있는 것도 그렇고 킨텍스 전시회장 내부가 라스베가스 컨벤션 센터와 비슷한 느낌이었다.
 
-![코버워치](/images/2016-11-09-design-korea-2016-review/2.png)
-![윤디자인](/images/2016-11-09-design-korea-2016-review/3.png)
+![코버워치](../images/2016-11-09-design-korea-2016-review/2.png)
+![윤디자인](../images/2016-11-09-design-korea-2016-review/3.png)
 
 가장 재밌게 본건 윤디자인 부스이다. 폰트제작 프로세스를 전시해놓은 것도 신기했고 무엇보다 요즘 인기인 오버워치의 전용 폰트를 윤디자인에서 디자인했다는 걸 처음 알았다.
 제작과정을 타임라인식으로 정리해 놓은 것이 흥미로웠다. 또한 윤디자인에서 얼마전 런칭한 프로그래밍이 필요없는 홈페이지 DIY툴
 <a href="https://www.eggpage.net/" target="_blank">eggpage</a>를 소개했다.(무료쿠폰 받아서 좋았다)
 
-![LG](/images/2016-11-09-design-korea-2016-review/5.png)
-![LG](/images/2016-11-09-design-korea-2016-review/6.png)
+![LG](../images/2016-11-09-design-korea-2016-review/5.png)
+![LG](../images/2016-11-09-design-korea-2016-review/6.png)
 
 우수디자인관에는 기업에 속해있는 디자인팀의 작품과 개인디자이너들의 작품이 같이 전시되어있고 프로덕트, 커뮤니케이션, 공간 등등 다양한 카테고리가 있다.
 
 특히 LG의 디스플레이는 역시 놀랍다. CES에서도 느꼈지만 기술력이 굉장한것같다. LG의 올레드(OLED) TV가 있었는데 두께가 1센치 미만이다. 측면사진에선 잘 보이지도 않는다.
 
-![LG](/images/2016-11-09-design-korea-2016-review/7.png)
+![LG](../images/2016-11-09-design-korea-2016-review/7.png)
 
 LG의 패키지 디자인. 휴대폰의 하단 탈착식의 느낌을 포장지에서도 느낄 수 있다.
 
-![LG](/images/2016-11-09-design-korea-2016-review/8.png)
+![LG](../images/2016-11-09-design-korea-2016-review/8.png)
 
 KT에서 디자인한 다이어리. 다이어리의 표지를 접으면 휴대폰 거치대로 사용 할 수 있다.
 
-![LG](/images/2016-11-09-design-korea-2016-review/9.png)
+![LG](../images/2016-11-09-design-korea-2016-review/9.png)
 
 Warm Material이라는 회사의 조립식 프로덕트. 회사의 이름처럼 따듯하고 아기자기한 느낌이라 예뻤다.
 

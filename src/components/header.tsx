@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import { cx, css } from "emotion"
-import React from "react"
+import React, { useLayoutEffect, useRef, useState } from "react"
+import { useLocation } from "@reach/router"
 
 const headerWrapper = css`
   background-color: #fff;
@@ -25,22 +25,60 @@ const headerLink = css`
   font-weight: 900;
 `
 
-const Header = ({ siteTitle }: { siteTitle: string }) => (
-  <header className={cx(headerWrapper)}>
-    <div className={cx(header)}>
-      <Link to="/" className={cx(headerLink)}>
-        {siteTitle}
-      </Link>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+type Props = {
+  siteTitle: string
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
+const Header: React.FC<Props> = props => {
+  const headerRef = useRef<HTMLElement>(null)
+  const [scrollPos, setScrollPos] = useState<number>(0)
+  const [headerMarginTop, setHeadermarginTop] = useState<number>(0)
+  const { pathname } = useLocation()
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  `)
+  console.log(data.allMarkdownRemark.nodes)
+  console.log(
+    data.allMarkdownRemark.nodes.filter(e => e.frontmatter.path === pathname)
+  )
+
+  useLayoutEffect(() => {
+    const onScroll = () => {
+      let nextMargin = headerMarginTop + (scrollPos - window.scrollY)
+      if (nextMargin <= -80) {
+        nextMargin = -80
+      } else if (nextMargin >= 0) {
+        nextMargin = 0
+      }
+      setScrollPos(window.scrollY)
+      setHeadermarginTop(nextMargin)
+    }
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [headerMarginTop, scrollPos])
+
+  return (
+    <header
+      style={{ marginTop: `${headerMarginTop}px` }}
+      className={cx(headerWrapper)}
+      ref={headerRef}
+    >
+      <div className={cx(header)}>
+        <Link to="/" className={cx(headerLink)}>
+          {props.siteTitle}
+        </Link>
+      </div>
+    </header>
+  )
 }
 
 export default Header

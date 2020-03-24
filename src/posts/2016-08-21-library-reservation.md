@@ -21,11 +21,11 @@ tags: ["technology"]
 ## Analysis
 우선 서비스가 어떻게 구성되어있는지 봐야한다.
 
-![1](/images/2016-08-18-library-reservation/1.png)
+![1](../images/2016-08-18-library-reservation/1.png)
 
 여기서 초록색 막대기가 있는 자리가 비어있는 자리이고 누르면 해당 좌석에 대해 예약할 수 있는 팝업이 뜬다.
 
-![2](/images/2016-08-18-library-reservation/2.png)
+![2](../images/2016-08-18-library-reservation/2.png)
 
 그리고 타임라인에서 예약할 시간대를 선택한 후 아이디와 비밀번호를 적고 예약하기 버튼을 누르면 예약이 완료된다.
 
@@ -73,7 +73,7 @@ Userpw:
 
 가운데의 좌석정보를 알려주는 프레임은 '/Vorvertrag_Position.php'로 iframe링크가 걸려있다. 이곳에 파라미터를 넘기면 어떤 좌석이 비어있는지 보여주는 html이 온다.
 
-![3](/images/2016-08-18-library-reservation/3.png)
+![3](../images/2016-08-18-library-reservation/3.png)
 
 페이지를 가져오기 위해 requests와 beautifulsoup4를 설치한다.
 

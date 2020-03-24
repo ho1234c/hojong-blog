@@ -31,7 +31,7 @@ View는 현재의 어떤 상태가 반영되어 유저에게 직접 표현되는
 Controller는 View와 Model사이를 연결해준다. photo gallery에서 Controller는 유저가 편집을 끝낸 사진을 업데이트하는 역할을 수행한다. View가 Controller의
 역할 까지 하는 경우가 있는데, 이는 변형된 패턴이다.
 
-![1](/images/2016-08-25-web-design-pattern/1.png)
+![1](../images/2016-08-25-web-design-pattern/1.png)
 
 ### Strong point
 

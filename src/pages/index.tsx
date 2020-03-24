@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { cx, css } from "emotion"
 import dayjs from "dayjs"
 import Layout from "../components/layout"
@@ -47,6 +46,7 @@ const post = css`
   align-items: end;
   margin: 0 -1.45rem;
   padding: 0 1.45rem;
+  border-radius: 5px;
   a {
     color: inherit;
   }
@@ -61,11 +61,11 @@ const postTitle = css`
 `
 
 const postDate = css`
-  color: #222;
-  font-size: 0.9rem;
+  color: #585858;
+  font-size: 0.8rem;
 `
 
-export default function IndexPage() {
+const IndexPage: React.FC = () => {
   const [postList, setPostList] = useState<Post[]>([])
   const [tagList, setTagList] = useState<string[]>([])
   const [selectedTag, setSelectedTag] = useState<string>("")
@@ -97,16 +97,20 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <div className={cx(tagContainer)}>
+      <section className={cx(tagContainer)}>
         <div className={cx(eachTag)} onClick={() => setSelectedTag("")}>
           all
         </div>
         {tagList.map(tag => (
-          <div className={cx(eachTag)} onClick={() => setSelectedTag(tag)}>
+          <div
+            key={tag}
+            className={cx(eachTag)}
+            onClick={() => setSelectedTag(tag)}
+          >
             {tag}
           </div>
         ))}
-      </div>
+      </section>
       <section className={cx(mainWrapper)}>
         {postList
           .filter(post =>
@@ -126,3 +130,5 @@ export default function IndexPage() {
     </Layout>
   )
 }
+
+export default IndexPage

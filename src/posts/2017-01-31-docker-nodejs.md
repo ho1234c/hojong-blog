@@ -5,7 +5,7 @@ title: "Docker로 Nodejs서버 배포하기"
 tags: ["technology"]
 ---
 
-![docker](/images/2017-01-31-docker-nodejs/1.png)
+![docker](../images/2017-01-31-docker-nodejs/1.png)
 
 <small>도커의 공식로고. 이름은 Moby Dock. 옷에 박혀 있어도 입고 다닐 수 있을 정도로 매우 귀엽다.</small>
 
@@ -18,14 +18,14 @@ nodejs와 nginx, postgresSQL을 사용하지만 사용법에 대해서는 소개
 도커엔진 위에 시스템운영에 필요한 최소한의 라이브러리들만 설치하고 시스템자원은 호스트OS와 공유한다. OS를 설치하는 것이 아니라 필요한 시스템 파일만 격리시키고 실행은 호스트OS에 시키는 것이다.
 따라서 게스트OS를 설치하는 방식에 비해서 월등히 빠르다.
 
-![docker principle](/images/2017-01-31-docker-nodejs/2.png)
+![docker principle](../images/2017-01-31-docker-nodejs/2.png)
 
 도커에는 이미지와 컨테이너라는 개념이 있다. 이미지를 통해서 컨테이너를 찍어낸다. 이미지만 있다면 같은 컨테이너를 몇개라도 만들 수 있다. (그것도 매우 빠르게)
 
 도커는 레이어를 겹치는것처럼 컨테이너의 이미지를 겹치는 방식으로 동작한다. 따라서 하나의 이미지에서 파생된 여러가지 이미지를 만들 수 있다.
 또한 같은 이미지를 사용한다면 이미지의 용량을 아낄 수 있다.
 
-![docker principle](/images/2017-01-31-docker-nodejs/3.png)
+![docker principle](../images/2017-01-31-docker-nodejs/3.png)
 
 또한 도커가 유명해진 가장 큰 이유 중 하나는 이렇게 제작한 이미지를 Docker Hub에 쉽게 공유할 수 있다는 점이다.
 마치 Github처럼 자유로운 pull/push가 가능하다.
@@ -55,7 +55,7 @@ sudo pip install docker-compose
 ```
 
 윈도우 혹은 맥에서는 Toolbox installer로 쉽게 설치할 수 있다.
-![install toolbox](/images/2017-01-31-docker-nodejs/5.png)
+![install toolbox](../images/2017-01-31-docker-nodejs/5.png)
 
 설치를 잘했는지 확인해본다. docker명령어 실행에는 기본적으로 보안권한이 필요하다.
 따라서 명령어 마다 sudo를 입력해주거나 권한이 있는 계정으로 실행해야한다.
@@ -381,14 +381,14 @@ docker-compose up
 docker-compose down
 ```
 
-![dokcer-compose-up](/images/2017-01-31-docker-nodejs/6.png)
+![dokcer-compose-up](../images/2017-01-31-docker-nodejs/6.png)
 <br/>
 > 윈도우나 맥에서 도커를 샤용한다면 VM을 통하게 되는데, 이 때는 localhost 와 같은 루프백 도메인이 아니라 
 docker machine과 호스트pc가 연결 되어있는 주소를 사용해야한다. docker terminal에서 ```docker-machine ls``` 를 입력하면 url을 확인할 수 있다.
 
 <br/>
 
-![check](/images/2017-01-31-docker-nodejs/4.png)
+![check](../images/2017-01-31-docker-nodejs/4.png)
 
 # 마치며
 도커를 활용하면 컨테이너를 두개 띄우고 라우터 설정만 바꿔주는 식으로 Blue-Green등의 배포전략을 쉽고 부드럽게 구성 할 수 있다. 특히 가벼운 프로젝트나 마이크로서비스에는 장점이 극대화되는것 같다.
