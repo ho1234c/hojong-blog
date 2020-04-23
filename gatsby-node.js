@@ -31,4 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: { node }, // additional data can be passed via context
     })
   })
+
+  const aboutMePage = path.resolve(`src/components/aboutMe.tsx`)
+  createPage({ path: "/me", component: aboutMePage })
 }

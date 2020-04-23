@@ -31,11 +31,13 @@ const eachTag = css`
   border-radius: 4px;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
   color: #f55151;
-  font-weight: lighter;
   cursor: pointer;
   min-width: 80px;
+`
+
+const activeTag = css`
+  font-weight: 900;
 `
 
 const post = css`
@@ -98,11 +100,20 @@ const IndexPage: React.FC = () => {
   return (
     <Layout>
       <section css={[tagContainer]}>
-        <div css={[eachTag]} onClick={() => setSelectedTag("")}>
-          all
-        </div>
+        {tagList.length !== 0 ? (
+          <div
+            css={[eachTag, !selectedTag && activeTag]}
+            onClick={() => setSelectedTag("")}
+          >
+            all
+          </div>
+        ) : null}
         {tagList.map(tag => (
-          <div key={tag} css={[eachTag]} onClick={() => setSelectedTag(tag)}>
+          <div
+            key={tag}
+            css={[eachTag, selectedTag === tag && activeTag]}
+            onClick={() => setSelectedTag(tag)}
+          >
             {tag}
           </div>
         ))}

@@ -1,7 +1,6 @@
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import React, { useLayoutEffect, useRef, useState } from "react"
-// import { useLocation } from "@reach/router"
 
 const headerWrapper = css`
   background-color: #fff;
@@ -17,12 +16,20 @@ const header = css`
   padding: 20px 1.45rem;
   box-sizing: border-box;
   font-size: 20px;
+  display: flex;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `
 
 const headerLink = css`
-  text-decoration: none;
-  color: inherit;
   font-weight: 900;
+`
+
+const meLink = css`
+  margin-left: auto;
+  font-size: 15px;
 `
 
 type Props = {
@@ -33,19 +40,6 @@ const Header: React.FC<Props> = props => {
   const headerRef = useRef<HTMLElement>(null)
   const [scrollPos, setScrollPos] = useState<number>(0)
   const [headerMarginTop, setHeadermarginTop] = useState<number>(0)
-  // const { pathname } = useLocation()
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allMarkdownRemark {
-  //       nodes {
-  //         frontmatter {
-  //           path
-  //           title
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
 
   useLayoutEffect(() => {
     const onScroll = () => {
@@ -72,6 +66,10 @@ const Header: React.FC<Props> = props => {
         <Link to="/" css={[headerLink]}>
           {props.siteTitle}
         </Link>
+
+        {/* <Link to="/me" css={[meLink]}>
+          About me
+        </Link> */}
       </div>
     </header>
   )
