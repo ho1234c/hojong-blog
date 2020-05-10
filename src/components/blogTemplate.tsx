@@ -36,7 +36,7 @@ const content = css`
   a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
-    color: #e2777a;
+    color: #f0ab40;
     &:hover {
       text-decoration: underline;
     }
@@ -49,7 +49,7 @@ const content = css`
   }
 
   .language-text {
-    background-color: #ffafaf3d;
+    background-color: #ffc47954;
     color: inherit;
   }
 `
