@@ -6,7 +6,13 @@ import dayjs from "dayjs"
 import SEO from "./seo"
 
 const postWrapper = css`
-  padding-top: 1rem;
+  padding: 1rem 1.45rem 0;
+  
+  @media only screen and (max-device-width: 480px) {
+   .gatsby-resp-image-wrapper {
+       margin: auto -1.45rem !important;
+    } 
+  }
 `
 
 const titleWrapper = css`
@@ -19,6 +25,7 @@ const titleWrapper = css`
 const title = css`
   font-size: 32px;
   line-height: 45px;
+  width: 100%;
 `
 
 const date = css`
@@ -30,16 +37,14 @@ const date = css`
 `
 
 const content = css`
-  img {
-    width: 100%;
-  }
   a {
     background-color: transparent;
-    -webkit-text-decoration-skip: objects;
     color: #f0ab40;
-    &:hover {
-      text-decoration: underline;
-    }
+    border-bottom: 1px solid #f0ab40;
+  }
+  
+  img {
+    width: 100%;
   }
 
   @media only screen and (max-device-width: 480px) {

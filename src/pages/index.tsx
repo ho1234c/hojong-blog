@@ -125,9 +125,9 @@ const IndexPage: React.FC = () => {
           )
           .map(({ frontmatter }) => (
             <Link to={frontmatter.path} key={frontmatter.title}>
-              <article css={[post]}>
-                <div css={[postTitle]}>{frontmatter.title}</div>
-                <div css={[postDate]}>
+              <article css={post}>
+                <div css={postTitle}>{frontmatter.title}</div>
+                <div css={postDate}>
                   {dayjs(frontmatter.date).format("MMM DD. YYYY")}
                 </div>
               </article>

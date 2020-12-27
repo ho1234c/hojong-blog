@@ -6,11 +6,10 @@ import "./layout.css"
 
 const layout = css`
   margin: 0 auto;
-  max-width: 850px;
-  padding: 1.45rem;
-  padding-bottom: 5rem;
+  max-width: 680px;
+  padding: 6em 0 5rem 0;
   box-sizing: border-box;
-  padding-top: 6rem;
+ 
 `
 
 const Layout: React.FC = ({ children }) => {
@@ -27,7 +26,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main css={[layout]}>{children}</main>
+      <main css={layout}>{children}</main>
     </>
   )
 }
