@@ -67,6 +67,10 @@ const postDate = css`
   font-size: 0.8rem;
 `
 
+const wrapper = css`
+padding: 0 1.45rem;
+`
+
 const IndexPage: React.FC = () => {
   const [postList, setPostList] = useState<Post[]>([])
   const [tagList, setTagList] = useState<string[]>([])
@@ -99,6 +103,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <Layout>
+      <div css={wrapper}>
       <section css={[tagContainer]}>
         {tagList.length !== 0 ? (
           <div
@@ -118,7 +123,7 @@ const IndexPage: React.FC = () => {
           </div>
         ))}
       </section>
-      <section css={[mainWrapper]}>
+      <section css={mainWrapper}>
         {postList
           .filter(post =>
             selectedTag ? post.frontmatter.tags.includes(selectedTag) : true
@@ -134,6 +139,7 @@ const IndexPage: React.FC = () => {
             </Link>
           ))}
       </section>
+      </div>
     </Layout>
   )
 }

@@ -6,7 +6,7 @@ import dayjs from "dayjs"
 import SEO from "./seo"
 
 const postWrapper = css`
-  padding: 1rem 1.45rem 0;
+  padding: 2rem 1.45rem 0;
   
   @media only screen and (max-device-width: 480px) {
    .gatsby-resp-image-wrapper {
