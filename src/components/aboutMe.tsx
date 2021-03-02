@@ -1,14 +1,10 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import Layout from "./layout"
 
 const mainText = css`
   font-size: 30px;
   line-height: 60px;
-`
-
-const textWrapper = css`
-  position: relative;
 `
 
 const strongText = css`

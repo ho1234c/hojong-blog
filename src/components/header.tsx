@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import React, { useRef, useState, useEffect } from "react"
 
 const headerWrapper = css`

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import dayjs from "dayjs"
 import Layout from "../components/layout"
 import { PostMeta } from "../@types"

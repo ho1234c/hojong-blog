@@ -5,6 +5,7 @@ module.exports = {
     author: `Jongho Jeong`,
   },
   plugins: [
+    `gatsby-plugin-pnpm`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,

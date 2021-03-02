@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import Layout from "./layout"
 import dayjs from "dayjs"
 import SEO from "./seo"
