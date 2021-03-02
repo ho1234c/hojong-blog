@@ -1,42 +1,13 @@
+/** @jsx jsx */
 import { Link } from "gatsby"
-import { css } from "@emotion/react"
+import { css, jsx } from "@emotion/react"
 import React, { useRef, useState, useEffect } from "react"
-
-const headerWrapper = css`
-  background-color: #fff;
-  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-`
-
-const header = css`
-  margin: 0 auto;
-  max-width: 680px;
-  padding: 20px 1.45rem;
-  box-sizing: border-box;
-  font-size: 20px;
-  display: flex;
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`
-
-const headerLink = css`
-  font-weight: 900;
-`
-
-const aboutMeLink = css`
-  margin-left: auto;
-  font-size: 15px;
-`
 
 type Props = {
   siteTitle: string
 }
 
-const Header: React.FC<Props> = props => {
+const Header: React.FC<Props> = (props) => {
   const headerRef = useRef<HTMLElement>(null)
   const [scrollPos, setScrollPos] = useState<number>(0)
   const [headerMarginTop, setHeadermarginTop] = useState<number>(0)
@@ -76,3 +47,28 @@ const Header: React.FC<Props> = props => {
 }
 
 export default Header
+
+const headerWrapper = css`
+  background-color: #fff;
+  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+`
+
+const header = css`
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 20px 1.45rem;
+  box-sizing: border-box;
+  font-size: 20px;
+  display: flex;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+`
+
+const headerLink = css`
+  font-weight: 900;
+`

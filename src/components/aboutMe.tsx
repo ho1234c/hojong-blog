@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from "react"
-import { css } from "@emotion/react"
+import { css, jsx } from "@emotion/react"
 import Layout from "./layout"
 
 const mainText = css`
@@ -16,18 +17,12 @@ const strongText = css`
   display: inline-block;
 `
 
-const englishText = css`
-  position: absolute;
-`
-
 const AboutMe: React.FC = () => {
   return (
     <Layout>
       <div css={mainText}>
-          <span css={strongText}>개발</span>과
-          <span css={strongText}>여행</span>과
-          <span css={strongText}>운동</span>을
-        좋아합니다
+        <span css={strongText}>개발</span>과<span css={strongText}>여행</span>과
+        <span css={strongText}>운동</span>을 좋아합니다
       </div>
       {/* <div>Programmer</div>
       <div>Traveler</div>
