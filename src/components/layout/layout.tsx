@@ -2,7 +2,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
-import Header from "./header"
+import Header from "../header/header"
 import "./layout.css"
 
 const Layout: React.FC = ({ children }) => {

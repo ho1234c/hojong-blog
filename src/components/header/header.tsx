@@ -9,12 +9,13 @@ type Props = {
 
 const Header: React.FC<Props> = (props) => {
   const headerRef = useRef<HTMLElement>(null)
-  const [scrollPos, setScrollPos] = useState<number>(0)
-  const [headerMarginTop, setHeadermarginTop] = useState<number>(0)
+  const [scrollPos, setScrollPos] = useState(() => 0)
+  const [headerMarginTop, setHeadermarginTop] = useState(() => 0)
 
   useEffect(() => {
     const onScroll = () => {
       let nextMargin = headerMarginTop + (scrollPos - window.scrollY)
+
       if (nextMargin <= -80) {
         nextMargin = -80
       } else if (nextMargin >= 0) {
@@ -23,7 +24,9 @@ const Header: React.FC<Props> = (props) => {
       setScrollPos(window.scrollY)
       setHeadermarginTop(nextMargin)
     }
+
     window.addEventListener("scroll", onScroll)
+
     return () => window.removeEventListener("scroll", onScroll)
   }, [headerMarginTop, scrollPos])
 

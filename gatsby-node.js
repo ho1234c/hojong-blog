@@ -2,7 +2,9 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/components/blogTemplate.tsx`)
+  const blogPostTemplate = path.resolve(
+    `src/components/blogTemplate/blogTemplate.tsx`
+  )
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -32,6 +34,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  const aboutMePage = path.resolve(`src/components/aboutMe.tsx`)
+  const aboutMePage = path.resolve(`src/components/aboutMe/aboutMe.tsx`)
   createPage({ path: "/me", component: aboutMePage })
 }

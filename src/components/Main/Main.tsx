@@ -1,28 +1,16 @@
 /** @jsx jsx */
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import dayjs from "dayjs"
-import Layout from "../components/layout/layout"
-import { Query } from "../../graphql-types"
+import Layout from "../layout/layout"
+import { Query } from "../../../graphql-types"
+import { usePosts } from "./usePosts"
 
 const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
-  const [postList, setPostList] = useState(data?.allMarkdownRemark?.nodes)
-  const [tagList, setTagList] = useState<string[]>([])
-  const [selectedTag, setSelectedTag] = useState<string>()
-
-  useEffect(() => {
-    const { nodes } = data.allMarkdownRemark
-
-    if (!nodes) return
-
-    const tagList = Array.from(
-      new Set(nodes.flatMap((node) => node.frontmatter?.tags).flat())
-    )
-
-    setPostList(nodes)
-    setTagList(tagList)
-  }, [])
+  const { postList, tagList, handleSelectTag, selectedTag } = usePosts(
+    data.allMarkdownRemark.nodes
+  )
 
   return (
     <Layout>
@@ -31,7 +19,7 @@ const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
           {tagList.length !== 0 ? (
             <div
               css={[eachTag, !selectedTag && activeTag]}
-              onClick={() => setSelectedTag("")}
+              onClick={() => handleSelectTag("")}
             >
               all
             </div>
@@ -40,7 +28,7 @@ const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
             <div
               key={tag}
               css={[eachTag, selectedTag === tag && activeTag]}
-              onClick={() => setSelectedTag(tag)}
+              onClick={() => handleSelectTag(tag)}
             >
               {tag}
             </div>

@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-graphql-codegen`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

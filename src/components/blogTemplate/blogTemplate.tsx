@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import React from "react"
 import { graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
-import Layout from "./layout"
+import Layout from "../layout/layout"
 import dayjs from "dayjs"
-import SEO from "./seo"
+import SEO from "../seo"
 
 interface Props {
   data: {
@@ -17,18 +16,20 @@ export default function Template({ data }: Props) {
   const { frontmatter, html } = markdownRemark
 
   return (
-    <Layout>
-      <div css={postWrapper}>
-        <div className="title-wrapper">
-          <SEO title={frontmatter.title}></SEO>
-          <div className="title">{frontmatter.title}</div>
-          <div className="date">
-            {dayjs(frontmatter.date).format("MMM DD. YYYY")}
+    <>
+      <SEO title={frontmatter.title}></SEO>
+      <Layout>
+        <div css={postWrapper}>
+          <div className="title-wrapper">
+            <div className="title">{frontmatter.title}</div>
+            <div className="date">
+              {dayjs(frontmatter.date).format("MMM DD. YYYY")}
+            </div>
           </div>
+          <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 export const pageQuery = graphql`
@@ -44,28 +45,27 @@ export const pageQuery = graphql`
   }
 `
 
-
 const postWrapper = css`
   padding: 2rem 1.45rem 0;
-  
+
   @media only screen and (max-device-width: 480px) {
-   .gatsby-resp-image-wrapper {
-       margin: auto -1.45rem !important;
-    } 
+    .gatsby-resp-image-wrapper {
+      margin: auto -1.45rem !important;
+    }
   }
-  
+
   .title-wrapper {
     display: flex;
     padding-bottom: 20px;
     font-weight: 700;
     flex-wrap: wrap;
-    
+
     .title {
       font-size: 32px;
       line-height: 45px;
       width: 100%;
     }
-    
+
     .date {
       margin-left: auto;
       font-size: 13px;
@@ -74,7 +74,7 @@ const postWrapper = css`
       align-items: flex-end;
     }
   }
-  
+
   .content {
     a {
       background-color: transparent;
@@ -95,6 +95,6 @@ const postWrapper = css`
     .language-text {
       background-color: #ffc47954;
       color: inherit;
-    }   
+    }
   }
 `
