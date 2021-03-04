@@ -36,14 +36,13 @@ const Header: React.FC<Props> = (props) => {
       css={headerWrapper}
       ref={headerRef}
     >
-      <div css={header}>
-        <Link to="/" css={headerLink}>
-          {props.siteTitle}
-        </Link>
-
-        {/*<Link to="/me" css={[aboutMeLink]}>*/}
-        {/*  About me*/}
-        {/*</Link>*/}
+      <div className="menu">
+        <div className="go-to-main">
+          <Link to="/">{props.siteTitle}</Link>
+        </div>
+        <div className="go-to-me">
+          <Link to="/me">Profile</Link>
+        </div>
       </div>
     </header>
   )
@@ -57,21 +56,27 @@ const headerWrapper = css`
   position: fixed;
   width: 100%;
   z-index: 1;
-`
 
-const header = css`
-  margin: 0 auto;
-  max-width: 680px;
-  padding: 20px 1.45rem;
-  box-sizing: border-box;
-  font-size: 20px;
-  display: flex;
-  a {
-    text-decoration: none;
-    color: inherit;
+  .menu {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 20px 1.45rem;
+    box-sizing: border-box;
+    font-size: 20px;
+    display: flex;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .go-to-main {
+      font-weight: 900;
+    }
+
+    .go-to-me {
+      margin-left: auto;
+      font-size: 14px;
+    }
   }
-`
-
-const headerLink = css`
-  font-weight: 900;
 `

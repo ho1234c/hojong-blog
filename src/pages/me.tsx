@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
-import Layout from "../layout/layout"
+import Layout from "../components/layout/layout"
 
 const mainText = css`
   font-size: 30px;

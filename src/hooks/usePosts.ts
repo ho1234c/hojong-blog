@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MarkdownRemark } from "../../../graphql-types"
+import { MarkdownRemark } from "../../graphql-types"
 
 export const usePosts = (nodes: MarkdownRemark[]) => {
   const [postList, setPostList] = useState(nodes)

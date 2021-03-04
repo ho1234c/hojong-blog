@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `HOOO`,
@@ -67,6 +69,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        "@src": path.join(__dirname, "src"),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

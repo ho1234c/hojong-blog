@@ -1,14 +1,13 @@
 ---
 path: "/blockchain-guide"
 date: "2018-02-02"
-title: "The authoritative guide to blockchain development (번역)"
+title: "The authoritative guide to blockchain development"
 tags: ["technology", "translation"]
 ---
 
-
 <a href="https://medium.freecodecamp.org/the-authoritative-guide-to-blockchain-development-855ab65b58bc" target="_blank"> Haseeb Qureshi님의 The authoritative guide to blockchain development</a>를 번역한 글입니다. 오역 및 의역이 있을 수 있습니다. 고유명사가 많아서 원문과 함께 보시는걸 추천합니다.
 
------
+---
 
 암호화폐, ICO들, 마법같은 인터넷상의 돈-- 매우 흥미로운일이고, 당신같은 개발자들은 이것에 빠지고싶을겁니다. 어디서부터 시작해야할까요?
 
@@ -197,4 +196,3 @@ Naval Ravikan는 [최근 인터뷰](https://www.pscp.tv/w/1eaKbqrWloRxX)에서 �
 - [Gwern의 비트코인의 단점에 대한 통찰있는 에세이](https://www.gwern.net/Bitcoin-is-Worse-is-Better)
 
 - 더 알고싶으시다면 [Jameson Lopp의 비트코인에 대한 풍부한 자료](https://lopp.net/bitcoin.html)를 확인해보세요
-

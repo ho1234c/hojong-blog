@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from "react"
 import { graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import Layout from "../layout/layout"
@@ -93,7 +94,7 @@ const postWrapper = css`
     }
 
     .language-text {
-      background-color: #ffc47954;
+      background-color: rgba(242, 242, 242, 1);
       color: inherit;
     }
   }

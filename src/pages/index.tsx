@@ -1,46 +1,38 @@
 /** @jsx jsx */
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import dayjs from "dayjs"
-import Layout from "../components/layout/layout"
-import { Query } from "../../graphql-types"
+import Layout from "@src/components/layout/layout"
+import { Query } from "@grpaphql-types"
+import { usePosts } from "@src/hooks/usePosts"
+import { useNavigate } from "@reach/router"
 
-const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
-  const [postList, setPostList] = useState(data?.allMarkdownRemark?.nodes)
-  const [tagList, setTagList] = useState<string[]>([])
-  const [selectedTag, setSelectedTag] = useState<string>()
+const Main: React.FC<{ data: Query }> = ({ data }) => {
+  const navigate = useNavigate()
+  const { postList, tagList, handleSelectTag, selectedTag } = usePosts(
+    data.allMarkdownRemark.nodes
+  )
 
-  useEffect(() => {
-    const { nodes } = data.allMarkdownRemark
-
-    if (!nodes) return
-
-    const tagList = Array.from(
-      new Set(nodes.flatMap((node) => node.frontmatter?.tags).flat())
-    )
-
-    setPostList(nodes)
-    setTagList(tagList)
-  }, [])
+  const goTo = (url: string) => navigate(url)
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div css={wrapperStyle}>
         <section className="tag-container">
-          {tagList.length !== 0 ? (
+          {tagList.length !== 0 && (
             <div
-              css={[eachTag, !selectedTag && activeTag]}
-              onClick={() => setSelectedTag("")}
+              css={[eachTagStyle, !selectedTag && activeTagStyle]}
+              onClick={() => handleSelectTag("")}
             >
               all
             </div>
-          ) : null}
+          )}
           {tagList.map((tag) => (
             <div
               key={tag}
-              css={[eachTag, selectedTag === tag && activeTag]}
-              onClick={() => setSelectedTag(tag)}
+              css={[eachTagStyle, selectedTag === tag && activeTagStyle]}
+              onClick={() => handleSelectTag(tag)}
             >
               {tag}
             </div>
@@ -52,14 +44,15 @@ const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
               selectedTag ? post.frontmatter?.tags?.includes(selectedTag) : true
             )
             .map(({ frontmatter }) => (
-              <Link to={frontmatter?.path!} key={frontmatter?.title}>
-                <article className="post">
-                  <div className="title">{frontmatter?.title}</div>
-                  <div className="content">
-                    {dayjs(frontmatter?.date).format("MMM DD. YYYY")}
-                  </div>
-                </article>
-              </Link>
+              <article
+                onClick={() => goTo(frontmatter?.path!)}
+                key={frontmatter?.title}
+              >
+                <h4 className="title">{frontmatter?.title}</h4>
+                <div className="content">
+                  {dayjs(frontmatter?.date).format("MMM DD. YYYY")}
+                </div>
+              </article>
             ))}
         </section>
       </div>
@@ -67,7 +60,7 @@ const IndexPage: React.FC<{ data: Query }> = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default Main
 
 export const pageQuery = graphql`
   {
@@ -84,7 +77,7 @@ export const pageQuery = graphql`
   }
 `
 
-const eachTag = css`
+const eachTagStyle = css`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,18 +85,17 @@ const eachTag = css`
   padding: 0.5rem 0.75rem;
   background: #feebeb;
   border-radius: 4px;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
   color: #f55151;
   cursor: pointer;
   min-width: 80px;
+  margin: 0 0.5rem 0.5rem 0;
 `
 
-const activeTag = css`
+const activeTagStyle = css`
   font-weight: 900;
 `
 
-const wrapper = css`
+const wrapperStyle = css`
   padding: 0 1.45rem;
 
   .tag-container {
@@ -117,7 +109,7 @@ const wrapper = css`
       color: inherit;
     }
 
-    .post {
+    article {
       height: 100px;
       display: flex;
       flex-direction: column;
@@ -126,6 +118,7 @@ const wrapper = css`
       margin: 0 -1.45rem;
       padding: 0 1.45rem;
       border-radius: 5px;
+      cursor: pointer;
 
       a {
         color: inherit;
@@ -136,9 +129,11 @@ const wrapper = css`
       }
 
       .title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 700;
+        margin: 0;
       }
+
       .content {
         color: #585858;
         font-size: 0.8rem;
