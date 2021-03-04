@@ -1,31 +1,24 @@
 /** @jsx jsx */
+import { useEffect } from "react"
 import { css, jsx } from "@emotion/react"
 import Layout from "../components/layout/layout"
 
-const mainText = css`
-  font-size: 30px;
-  line-height: 60px;
-`
-
-const strongText = css`
-  color: #ffa32de3;
-  border-bottom: 5px solid #ff9d20;
-  font-weight: bold;
-  padding-bottom: 3px;
-  line-height: 30px;
-  display: inline-block;
-`
-
 const AboutMe: React.FC = () => {
+  useEffect(() => {
+    const onScroll = () => {
+      console.log(
+        window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+      )
+    }
+
+    window.addEventListener("scroll", onScroll)
+
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
   return (
     <Layout>
-      <div css={mainText}>
-        <span css={strongText}>개발</span>과<span css={strongText}>여행</span>과
-        <span css={strongText}>운동</span>을 좋아합니다
-      </div>
-      {/* <div>Programmer</div>
-      <div>Traveler</div>
-      <div>Fitness lovers</div> */}
+      <div style={{ height: 20000 }}></div>
     </Layout>
   )
 }

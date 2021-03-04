@@ -52,6 +52,11 @@ const Main: React.FC<{ data: Query }> = ({ data }) => {
                 <div className="content">
                   {dayjs(frontmatter?.date).format("MMM DD. YYYY")}
                 </div>
+                <div className="chip-container">
+                  {frontmatter?.tags!.map((tag) => (
+                    <div className="chip">{tag}</div>
+                  ))}
+                </div>
               </article>
             ))}
         </section>
@@ -83,12 +88,17 @@ const eachTagStyle = css`
   justify-content: center;
   font-size: 0.85rem;
   padding: 0.5rem 0.75rem;
-  background: #feebeb;
   border-radius: 4px;
-  color: #f55151;
+  background: #ffedda;
+  color: #f96900;
   cursor: pointer;
   min-width: 80px;
   margin: 0 0.5rem 0.5rem 0;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.08, 1.08);
+  }
 `
 
 const activeTagStyle = css`
@@ -110,13 +120,12 @@ const wrapperStyle = css`
     }
 
     article {
-      height: 100px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: end;
       margin: 0 -1.45rem;
-      padding: 0 1.45rem;
+      padding: 1rem 1.45rem;
       border-radius: 5px;
       cursor: pointer;
 
@@ -137,6 +146,23 @@ const wrapperStyle = css`
       .content {
         color: #585858;
         font-size: 0.8rem;
+      }
+
+      .chip-container {
+        display: flex;
+
+        .chip {
+          font-size: 0.8rem;
+          border-radius: 20px;
+          background: #ffedda;
+          color: #f96900;
+          padding: 0 10px;
+          line-height: 24px;
+
+          &:not(:last-of-type) {
+            margin-right: 5px;
+          }
+        }
       }
     }
   }

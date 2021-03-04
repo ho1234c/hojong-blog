@@ -7,6 +7,7 @@ dependencies:
   gatsby-image: 2.11.0
   gatsby-link: 2.11.0_66f913eb5ad9051f2c1624437c240ba1
   gatsby-plugin-emotion: 5.4.0_38d90f7d85d9a3a67935eb6762317050
+  gatsby-plugin-google-analytics: 3.0.0_6c096886184b7301efadd916e81036b1
   gatsby-plugin-graphql-codegen: 2.7.1_gatsby@2.32.9+typescript@4.2.2
   gatsby-plugin-offline: 3.10.2_gatsby@2.32.9
   gatsby-plugin-react-helmet: 3.10.0_gatsby@2.32.9+react-helmet@6.1.0
@@ -8649,6 +8650,22 @@ packages:
       gatsby: ^2.0.0
     resolution:
       integrity: sha512-n6L9hhKFjKjMlx1gZ/83UrhUQR6GTNdEDGW0lCUnccRJBXOwQ7GI8PGFd9GUEr/cUv4gR0+jpF47mNO2y/daPg==
+  /gatsby-plugin-google-analytics/3.0.0_6c096886184b7301efadd916e81036b1:
+    dependencies:
+      '@babel/runtime': 7.13.9
+      gatsby: 2.32.9_24b12e544cf6ca996debdbfad8b93c93
+      minimatch: 3.0.4
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+    engines:
+      node: '>=12.13.0'
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+    resolution:
+      integrity: sha512-a4jaitK8/oUW0oJEv19H6Yo4/ROM0QF0EumwDP0Nnhg+2KXDyZ7DJGmkvb8neZuKi77u8iZN2VPIFCeAioG/GQ==
   /gatsby-plugin-graphql-codegen/2.7.1_gatsby@2.32.9+typescript@4.2.2:
     dependencies:
       '@graphql-codegen/core': 1.17.9
@@ -18639,6 +18656,7 @@ specifiers:
   gatsby-image: ^2.11.0
   gatsby-link: ^2.11.0
   gatsby-plugin-emotion: ^5.4.0
+  gatsby-plugin-google-analytics: ^3.0.0
   gatsby-plugin-graphql-codegen: ^2.7.1
   gatsby-plugin-offline: ^3.10.2
   gatsby-plugin-pnpm: ^1.2.5
