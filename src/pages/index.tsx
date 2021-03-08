@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import dayjs from "dayjs"
 import Layout from "@src/components/layout/layout"

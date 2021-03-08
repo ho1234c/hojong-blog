@@ -51,11 +51,12 @@ const Header: React.FC<Props> = (props) => {
 export default Header
 
 const headerWrapper = css`
-  background-color: #fff;
   box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   z-index: 1;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.8);
 
   .menu {
     margin: 0 auto;
