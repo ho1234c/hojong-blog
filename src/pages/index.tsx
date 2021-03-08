@@ -98,6 +98,8 @@ const eachTagStyle = css`
 
   &:hover {
     transform: scale(1.08, 1.08);
+    margin-left: calc(3px);
+    margin-right: calc(0.5rem + 3px);
   }
 `
 

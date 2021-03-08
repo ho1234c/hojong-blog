@@ -41,7 +41,7 @@ const Header: React.FC<Props> = (props) => {
           <Link to="/">{props.siteTitle}</Link>
         </div>
         <div className="go-to-me">
-          <Link to="/me">Profile</Link>
+          <Link to="/me">About me</Link>
         </div>
       </div>
     </header>
