@@ -53,6 +53,9 @@ const postWrapper = css`
     .gatsby-resp-image-wrapper {
       margin: auto -1.45rem !important;
     }
+    .gatsby-highlight {
+      margin: auto -1.45rem !important;
+    }
   }
 
   .title-wrapper {
@@ -65,6 +68,7 @@ const postWrapper = css`
       font-size: 32px;
       line-height: 45px;
       width: 100%;
+      padding-bottom: 10px;
     }
 
     .date {

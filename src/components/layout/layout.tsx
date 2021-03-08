@@ -31,4 +31,5 @@ const mainStyle = css`
   max-width: 680px;
   padding: 70px 0 5rem 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 `
