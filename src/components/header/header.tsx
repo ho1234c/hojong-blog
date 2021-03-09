@@ -3,11 +3,11 @@ import { Link } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import React, { useRef, useState, useEffect } from "react"
 
-type Props = {
+type HeaderProps = {
   siteTitle: string
 }
 
-const Header: React.FC<Props> = (props) => {
+const Header: React.FC<HeaderProps> = (props) => {
   const headerRef = useRef<HTMLElement>(null)
   const [scrollPos, setScrollPos] = useState(() => 0)
   const [headerMarginTop, setHeadermarginTop] = useState(() => 0)

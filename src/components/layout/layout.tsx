@@ -2,7 +2,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
-import Header from "../header/header"
+import Header from "../Header/Header"
 import "./layout.css"
 
 const Layout: React.FC = ({ children }) => {
@@ -29,7 +29,7 @@ export default Layout
 const mainStyle = css`
   margin: 0 auto;
   max-width: 680px;
-  padding: 70px 0 5rem 0;
+  padding: 70px 0 4rem 0;
   box-sizing: border-box;
   overflow-x: hidden;
 `

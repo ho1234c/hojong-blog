@@ -2,9 +2,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { css, jsx } from "@emotion/react"
-import Layout from "../layout/layout"
+import Layout from "../Layout/Layout"
 import dayjs from "dayjs"
 import SEO from "../seo"
+import Comments from "../Comments/Comments"
 
 interface Props {
   data: {
@@ -28,6 +29,7 @@ export default function Template({ data }: Props) {
             </div>
           </div>
           <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
+          <Comments repo="ho1234c/hojong-blog" />
         </div>
       </Layout>
     </>
@@ -81,6 +83,8 @@ const postWrapper = css`
   }
 
   .content {
+    padding-bottom: 3rem;
+
     a {
       background-color: transparent;
       color: #f0ab40;
