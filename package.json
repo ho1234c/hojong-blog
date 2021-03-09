@@ -45,7 +45,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "pnpx netlify-cli deploy --prod",
+    "deploy": "pnpx netlify deploy --prod",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
