@@ -87,8 +87,9 @@ const postWrapper = css`
 
     a {
       background-color: transparent;
-      color: #f0ab40;
-      border-bottom: 1px solid #f0ab40;
+      color: #f39b14;
+      border-bottom: 1px solid #f39b14;
+      word-break: break-all;
     }
 
     img {

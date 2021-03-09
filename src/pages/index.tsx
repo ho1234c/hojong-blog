@@ -1,15 +1,13 @@
 /** @jsx jsx */
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import { css, jsx } from "@emotion/react"
 import dayjs from "dayjs"
 import Layout from "@src/components/Layout/Layout"
 import { Query } from "@grpaphql-types"
 import { usePosts } from "@src/hooks/usePosts"
-import { useNavigate } from "@reach/router"
 
 const Main: React.FC<{ data: Query }> = ({ data }) => {
-  const navigate = useNavigate()
   const { postList, tagList, handleSelectTag, selectedTag } = usePosts(
     data.allMarkdownRemark.nodes
   )
