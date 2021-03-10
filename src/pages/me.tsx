@@ -236,6 +236,10 @@ const aboutMeStyle = css`
       display: flex;
       justify-content: center;
 
+      a {
+        color: inherit;
+      }
+
       a:not(:last-of-type) {
         margin-right: 10px;
       }

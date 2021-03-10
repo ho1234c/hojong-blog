@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { graphql, navigate } from "gatsby"
-import { css, jsx } from "@emotion/react"
+import { css, jsx, Theme } from "@emotion/react"
 import dayjs from "dayjs"
 import Layout from "@src/components/Layout/Layout"
 import { Query } from "@grpaphql-types"
@@ -80,15 +80,15 @@ export const pageQuery = graphql`
   }
 `
 
-const eachTagStyle = css`
+const eachTagStyle = (theme: Theme) => css`
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
-  background: #ffedda;
-  color: #f96900;
+  background: ${theme.color.secondary};
+  color: ${theme.color.primary};
   cursor: pointer;
   min-width: 80px;
   margin: 0 0.5rem 0.5rem 0;
@@ -105,7 +105,7 @@ const activeTagStyle = css`
   font-weight: 900;
 `
 
-const wrapperStyle = css`
+const wrapperStyle = (theme: Theme) => css`
   padding: 0 1.45rem;
 
   .tag-container {
@@ -134,7 +134,7 @@ const wrapperStyle = css`
       }
 
       &:hover {
-        background-color: #f4f4f4;
+        background-color: ${theme.color.postHover};
       }
 
       .title {
@@ -144,7 +144,7 @@ const wrapperStyle = css`
       }
 
       .content {
-        color: #585858;
+        color: ${theme.color.textSecondary};
         font-size: 0.8rem;
       }
 
@@ -154,8 +154,8 @@ const wrapperStyle = css`
         .chip {
           font-size: 0.8rem;
           border-radius: 20px;
-          background: #ffedda;
-          color: #f96900;
+          background: ${theme.color.secondary};
+          color: ${theme.color.primary};
           padding: 0 10px;
           line-height: 24px;
 

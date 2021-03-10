@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { graphql } from "gatsby"
-import { css, jsx } from "@emotion/react"
+import { css, jsx, Theme } from "@emotion/react"
 import Layout from "../Layout/Layout"
 import dayjs from "dayjs"
 import SEO from "../seo"
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
   }
 `
 
-const postWrapper = css`
+const postWrapper = (theme: Theme) => css`
   padding: 2rem 1.45rem 0;
 
   @media only screen and (max-device-width: 480px) {
@@ -87,8 +87,8 @@ const postWrapper = css`
 
     a {
       background-color: transparent;
-      color: #f39b14;
-      border-bottom: 1px solid #f39b14;
+      color: ${theme.color.primary};
+      border-bottom: 1px solid ${theme.color.primary};
       word-break: break-all;
     }
 
@@ -103,7 +103,7 @@ const postWrapper = css`
     }
 
     .language-text {
-      background-color: rgba(242, 242, 242, 1);
+      background-color: ${theme.color.markdown.languageText};
       color: inherit;
     }
   }

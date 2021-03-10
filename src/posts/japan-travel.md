@@ -29,6 +29,7 @@ tags: ["travel"]
 아마도 세상에서 가장 가성비높은 행복은 맛있는 음식일 것이다!
 
 ![스시](../images/japan-travel/sushi.jpeg)
+
 ## 작은것
 
 디테일이 느껴지는 제품과 서비스가 인상깊었다. “디테일”은 어쩌면 별 것 아닌 작은부분일 수 있다. 하지만 나는 이 별것아닌것들에 크게 휘둘린다.
@@ -39,7 +40,7 @@ tags: ["travel"]
 
 ![사다리](../images/japan-travel/Ladder.jpeg)
 
-![노선도](../images/japan-travel/train.jpeg)
+![노선도](../images/japan-travel/train.png)
 
 ---
 

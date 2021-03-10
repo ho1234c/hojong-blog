@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { css, jsx } from "@emotion/react"
+import { css, jsx, Theme } from "@emotion/react"
 import React, { useRef, useState, useEffect } from "react"
 
 type HeaderProps = {
@@ -50,13 +50,13 @@ const Header: React.FC<HeaderProps> = (props) => {
 
 export default Header
 
-const headerWrapper = css`
-  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+const headerWrapper = (theme: Theme) => css`
+  box-shadow: ${theme.color.headerBoxShadow};
   position: fixed;
   width: 100%;
   z-index: 1;
   backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: ${theme.color.header};
 
   .menu {
     margin: 0 auto;

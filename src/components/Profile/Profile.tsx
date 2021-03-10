@@ -9,6 +9,7 @@ const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
       height="500"
       viewBox="0 0 300 300"
       preserveAspectRatio="xMidYMid meet"
+      fill="currentColor"
       {...props}
     >
       <circle
@@ -20,7 +21,7 @@ const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
         strokeWidth="3"
         fill="none"
       />
-      <g transform="translate(15, 375) scale(0.025, -0.025)" stroke="none">
+      <g transform="translate(15, 375) scale(0.025, -0.025)">
         <path
           d="M4453 14199 c-29 -5 -90 -22 -135 -37 -74 -26 -108 -42 -248 -117
 -33 -17 -108 -75 -146 -112 -22 -22 -38 -84 -24 -93 6 -4 11 -11 10 -16 -1 -5
