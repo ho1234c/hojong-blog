@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx, ThemeProvider, Theme, Global } from "@emotion/react"
 import Header from "../Header/Header"
@@ -10,14 +10,11 @@ import "./layout.css"
 
 const Layout: React.FC = ({ children }) => {
   const [theme, setTheme] = useState<{ color: ColorType; isDarkMode: boolean }>(
-    () => {
-      const isDarkMode = localStorage.getItem("isDarkMode") === "1"
-
-      return {
-        color: isDarkMode ? _theme.color.dark : _theme.color.light,
-        isDarkMode,
-      } as Theme
-    }
+    () =>
+      ({
+        color: _theme.color.light,
+        isDarkMode: false,
+      } as Theme)
   )
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -37,6 +34,17 @@ const Layout: React.FC = ({ children }) => {
       isDarkMode: nextChecked,
     })
   }
+
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem("isDarkMode") === "1"
+
+    if (isDarkMode) {
+      setTheme({
+        color: _theme.color.dark,
+        isDarkMode,
+      })
+    }
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>
