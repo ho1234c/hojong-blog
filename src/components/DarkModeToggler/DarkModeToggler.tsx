@@ -15,6 +15,7 @@ const DarkModeToggler: React.FC<DarkModeTogglerProps> = ({ handleChange }) => {
   return (
     <div css={wrapperStyle}>
       <Switch
+        width={53}
         onChange={handleChange}
         checked={theme.isDarkMode}
         offColor={theme.color.textSecondary}
@@ -29,9 +30,9 @@ const DarkModeToggler: React.FC<DarkModeTogglerProps> = ({ handleChange }) => {
         }
         uncheckedIcon={
           <DarkModeIcon
-            width="16"
-            height="16"
-            style={{ transform: "translate(7px, 2px)" }}
+            width="18"
+            height="18"
+            style={{ transform: "translate(4px, 3px)" }}
           />
         }
       />
