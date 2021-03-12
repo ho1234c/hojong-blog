@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { MarkdownRemark } from "@grpaphql-types"
-import { setItem, getItem } from "@src/utils/sessionStorage"
+import { sessionStorage } from "@src/utils/window"
 
 const STORAGE_KEY = "hojong-blog:tag"
 
@@ -8,7 +8,7 @@ export const usePosts = (nodes: MarkdownRemark[]) => {
   const [postList, setPostList] = useState(nodes)
   const [tagList, setTagList] = useState<string[]>([])
   const [selectedTag, setSelectedTag] = useState<string>(() =>
-    getItem(STORAGE_KEY)
+    sessionStorage.getItem(STORAGE_KEY)
   )
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const usePosts = (nodes: MarkdownRemark[]) => {
 
   const handleSelectTag = (tag: string) => {
     setSelectedTag(tag)
-    setItem(STORAGE_KEY, tag)
+    sessionStorage.setItem(STORAGE_KEY, tag)
   }
 
   return {
