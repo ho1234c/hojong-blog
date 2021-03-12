@@ -1,4 +1,5 @@
 import React, { createRef, useLayoutEffect } from "react"
+import { useTheme } from "@emotion/react"
 
 const src = "https://utteranc.es/client.js"
 
@@ -8,6 +9,7 @@ export type CommentsProps = {
 
 const Comments: React.FC<CommentsProps> = React.memo(({ repo }) => {
   const containerRef = createRef<HTMLDivElement>()
+  const theme = useTheme()
 
   useLayoutEffect(() => {
     const utterances = document.createElement("script")
@@ -15,7 +17,7 @@ const Comments: React.FC<CommentsProps> = React.memo(({ repo }) => {
     const attributes = {
       src,
       repo,
-      theme: "github-light",
+      theme: theme.isDarkMode ? "github-dark" : "github-light",
       "issue-term": "pathname",
       label: "✨💬 comments ✨",
       crossOrigin: "anonymous",
