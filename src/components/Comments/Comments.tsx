@@ -12,6 +12,10 @@ const Comments: React.FC<CommentsProps> = React.memo(({ repo }) => {
   const theme = useTheme()
 
   useLayoutEffect(() => {
+    const element = document.querySelector(".utterances")
+    if (element) {
+      element.remove()
+    }
     const utterances = document.createElement("script")
 
     const attributes = {
@@ -29,7 +33,7 @@ const Comments: React.FC<CommentsProps> = React.memo(({ repo }) => {
     })
 
     containerRef.current!.appendChild(utterances)
-  }, [repo])
+  }, [repo, theme.isDarkMode])
 
   return <div ref={containerRef} />
 })
