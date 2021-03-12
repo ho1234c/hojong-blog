@@ -1,21 +1,15 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx, ThemeProvider, Theme, Global } from "@emotion/react"
 import Header from "../Header/Header"
 import { theme as _theme, ColorType } from "@src/theme"
 import DarkModeToggler from "@src/components/DarkModeToggler/DarkModeToggler"
 import { localStorage } from "@src/utils/window"
+import { useSettledTheme } from "./useSettledTheme"
 import "./layout.css"
 
 const Layout: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<{ color: ColorType; isDarkMode: boolean }>(
-    () =>
-      ({
-        color: _theme.color.light,
-        isDarkMode: false,
-      } as Theme)
-  )
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,6 +20,8 @@ const Layout: React.FC = ({ children }) => {
     }
   `)
 
+  const { theme, setTheme, isSettled } = useSettledTheme()
+
   const changeMode = (nextChecked: boolean) => {
     localStorage.setItem("isDarkMode", nextChecked ? "1" : "0")
 
@@ -35,16 +31,7 @@ const Layout: React.FC = ({ children }) => {
     })
   }
 
-  useEffect(() => {
-    const isDarkMode = localStorage.getItem("isDarkMode") === "1"
-
-    if (isDarkMode) {
-      setTheme({
-        color: _theme.color.dark,
-        isDarkMode,
-      })
-    }
-  }, [])
+  if (!isSettled) return null
 
   return (
     <ThemeProvider theme={theme}>
