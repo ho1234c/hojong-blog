@@ -1,6 +1,9 @@
 import React from "react"
+import { useTheme } from "@emotion/react"
 
 const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
+  const theme = useTheme()
+
   return (
     <svg
       version="1.0"
@@ -10,6 +13,14 @@ const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
       viewBox="0 0 300 300"
       preserveAspectRatio="xMidYMid meet"
       fill="currentColor"
+      style={{
+        width: 200,
+        height: 200,
+        boxShadow: `${
+          theme.isDarkMode ? "rgba(255, 255, 255, 0.24)" : "rgba(0, 0, 0, 0.24)"
+        } 0px 3px 8px`,
+        borderRadius: 100,
+      }}
       {...props}
     >
       <circle

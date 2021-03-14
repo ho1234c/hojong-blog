@@ -51,7 +51,9 @@ const Header: React.FC<HeaderProps> = (props) => {
 export default Header
 
 const headerWrapper = (theme: Theme) => css`
-  box-shadow: ${theme.color.headerBoxShadow};
+  box-shadow: ${theme.isDarkMode
+    ? "1px 2px 18px rgb(255 255 255 / 10%)"
+    : "1px 2px 18px rgb(0 0 0 / 10%)"};
   width: 100%;
   z-index: 1;
   backdrop-filter: blur(3px);

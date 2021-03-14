@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useEffect, useState } from "react"
-import { css, jsx } from "@emotion/react"
+import { css, jsx, useTheme } from "@emotion/react"
 import Layout from "@src/components/Layout/Layout"
 import Profile from "@src/components/Profile/Profile"
 import WorkIcon from "@src/assets/icon/work.svg"
@@ -30,14 +30,7 @@ const AboutMe: React.FC = () => {
       <div css={aboutMeStyle}>
         <section className={`profile-wrapper ${isShowProfile ? "show" : ""}`}>
           <div className="profile-frame">
-            <Profile
-              style={{
-                width: 200,
-                height: 200,
-                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-                borderRadius: 100,
-              }}
-            />
+            <Profile />
           </div>
 
           <div className="address">

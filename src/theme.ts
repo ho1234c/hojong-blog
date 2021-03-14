@@ -3,7 +3,6 @@ export type ColorType = typeof light
 export const light = {
   body: "#fff",
   header: "rgba(255, 255, 255, 0.8)",
-  headerBoxShadow: "1px 2px 18px rgb(0 0 0 / 10%)",
   textPrimary: "#333",
   textSecondary: "#585858",
   primary: "#f96900",
@@ -18,7 +17,6 @@ export const light = {
 export const dark = {
   body: "#3a3a3a",
   header: "rgb(95 95 95 / 80%)",
-  headerBoxShadow: "1px 2px 18px rgb(255 255 255 / 10%)",
   textPrimary: "#eaeaea",
   textSecondary: "#9e9e9e",
   primary: "#f78c57",
