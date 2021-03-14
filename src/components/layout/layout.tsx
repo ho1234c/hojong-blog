@@ -59,7 +59,7 @@ export default Layout
 const mainStyle = (theme: Theme) => css`
   margin: 0 auto;
   max-width: 680px;
-  padding: 70px 0 4rem 0;
+  padding-bottom: 4rem;
   box-sizing: border-box;
   overflow-x: hidden;
 `

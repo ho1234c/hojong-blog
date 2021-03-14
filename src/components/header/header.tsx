@@ -1,40 +1,40 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import { css, jsx, Theme } from "@emotion/react"
-import React, { useRef, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
 type HeaderProps = {
   siteTitle: string
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const headerRef = useRef<HTMLElement>(null)
   const [scrollPos, setScrollPos] = useState(() => 0)
-  const [headerMarginTop, setHeadermarginTop] = useState(() => 0)
+  const [headerYPos, setHeaderYPos] = useState(() => 0)
 
   useEffect(() => {
     const onScroll = () => {
-      let nextMargin = headerMarginTop + (scrollPos - window.scrollY)
+      if (window.scrollY < 0) return
 
-      if (nextMargin <= -80) {
-        nextMargin = -80
-      } else if (nextMargin >= 0) {
-        nextMargin = 0
+      let nextYpos = headerYPos + (scrollPos - window.scrollY)
+
+      if (nextYpos <= -80) {
+        nextYpos = -80
+      } else if (nextYpos >= 0) {
+        nextYpos = 0
       }
       setScrollPos(window.scrollY)
-      setHeadermarginTop(nextMargin)
+      setHeaderYPos(nextYpos)
     }
 
     window.addEventListener("scroll", onScroll)
 
     return () => window.removeEventListener("scroll", onScroll)
-  }, [headerMarginTop, scrollPos])
+  }, [headerYPos, scrollPos])
 
   return (
     <header
-      style={{ marginTop: `${headerMarginTop}px` }}
       css={headerWrapper}
-      ref={headerRef}
+      style={{ transform: `translateY(${headerYPos}px)` }}
     >
       <div className="menu">
         <div className="go-to-main">
@@ -52,11 +52,12 @@ export default Header
 
 const headerWrapper = (theme: Theme) => css`
   box-shadow: ${theme.color.headerBoxShadow};
-  position: fixed;
   width: 100%;
   z-index: 1;
   backdrop-filter: blur(3px);
   background-color: ${theme.color.header};
+  position: sticky;
+  top: 0;
 
   .menu {
     margin: 0 auto;
