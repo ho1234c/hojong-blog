@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useEffect, useState } from "react"
 import { css, jsx, useTheme } from "@emotion/react"
-import Layout from "@src/components/Layout/Layout"
+import Layout from "@src/components/layout/layout"
 import Profile from "@src/components/Profile/Profile"
 import WorkIcon from "@src/assets/icon/work.svg"
 import GithubIcon from "@src/assets/icon/github.svg"

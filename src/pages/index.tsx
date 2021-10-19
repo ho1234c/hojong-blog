@@ -3,7 +3,7 @@ import React from "react"
 import { graphql, navigate } from "gatsby"
 import { css, jsx, Theme } from "@emotion/react"
 import dayjs from "dayjs"
-import Layout from "@src/components/Layout/Layout"
+import Layout from "@src/components/layout/layout"
 import { Query } from "@grpaphql-types"
 import { usePosts } from "@src/hooks/usePosts"
 
@@ -123,7 +123,6 @@ const wrapperStyle = (theme: Theme) => css`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: end;
       margin: 0 -1.45rem;
       padding: 1rem 1.45rem;
       border-radius: 5px;

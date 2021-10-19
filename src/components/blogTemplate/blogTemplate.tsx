@@ -2,7 +2,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { css, jsx, Theme } from "@emotion/react"
-import Layout from "../Layout/Layout"
+import Layout from "../layout/layout"
 import dayjs from "dayjs"
 import SEO from "../seo"
 import Comments from "../Comments/Comments"

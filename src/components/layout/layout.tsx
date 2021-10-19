@@ -2,7 +2,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx, ThemeProvider, Theme, Global } from "@emotion/react"
-import Header from "../Header/Header"
+import Header from "../header/header"
 import { theme as _theme, ColorType } from "@src/theme"
 import DarkModeToggler from "@src/components/DarkModeToggler/DarkModeToggler"
 import { localStorage } from "@src/utils/window"
