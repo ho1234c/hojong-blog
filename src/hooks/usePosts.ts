@@ -32,7 +32,7 @@ export const usePosts = (nodes: MarkdownRemark[]) => {
   const handleSelectTag = (tag: string) => {
     sessionStorage.setItem(STORAGE_KEY, tag);
     setSelectedTag(tag);
-    setFillteredPostList(postList.filter((post) => post.frontmatter?.tags?.includes(tag)));
+    setFillteredPostList(postList.filter((post) => (tag ? post.frontmatter?.tags?.includes(tag) : true)));
   };
 
   return {
