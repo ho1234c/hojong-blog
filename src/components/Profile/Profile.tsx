@@ -1,8 +1,8 @@
-import React from "react"
-import { useTheme } from "@emotion/react"
+import React from 'react';
+import { useTheme } from '@emotion/react';
 
 const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <svg
@@ -16,22 +16,12 @@ const Profile: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = (props) => {
       style={{
         width: 200,
         height: 200,
-        boxShadow: `${
-          theme.isDarkMode ? "rgba(255, 255, 255, 0.24)" : "rgba(0, 0, 0, 0.24)"
-        } 0px 3px 8px`,
+        boxShadow: `${theme.isDarkMode ? 'rgba(255, 255, 255, 0.24)' : 'rgba(0, 0, 0, 0.24)'} 0px 3px 8px`,
         borderRadius: 100,
       }}
       {...props}
     >
-      <circle
-        className="border"
-        cx="150"
-        cy="150"
-        r="148"
-        stroke="currentColor"
-        strokeWidth="3"
-        fill="none"
-      />
+      <circle className="border" cx="150" cy="150" r="148" stroke="currentColor" strokeWidth="3" fill="none" />
       <g transform="translate(15, 375) scale(0.025, -0.025)">
         <path
           d="M4453 14199 c-29 -5 -90 -22 -135 -37 -74 -26 -108 -42 -248 -117
@@ -446,7 +436,7 @@ c1 27 -4 40 -18 48 -25 13 -34 13 -49 -2z"
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "@src/components/layout/layout"
-import SEO from "../components/seo"
+import Layout from '@src/components/layout/layout';
+import SEO from '../components/seo';
 
 const NotFoundPage: React.FC = () => (
   <Layout>
@@ -9,6 +9,6 @@ const NotFoundPage: React.FC = () => (
     <h1>NOT FOUND</h1>
     <p>잘못된 경로 입니다</p>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

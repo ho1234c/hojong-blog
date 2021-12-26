@@ -1,20 +1,20 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { css, jsx, Theme } from "@emotion/react"
-import Layout from "../layout/layout"
-import dayjs from "dayjs"
-import SEO from "../seo"
-import Comments from "../Comments/Comments"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { css, Theme } from '@emotion/react';
+import Layout from '../layout/layout';
+import dayjs from 'dayjs';
+import SEO from '../seo';
+import Comments from '../Comments/Comments';
 
 interface Props {
   data: {
-    markdownRemark: any
-  }
+    markdownRemark: any;
+  };
 }
 
 export default function Template({ data }: Props) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
 
   return (
     <>
@@ -23,19 +23,17 @@ export default function Template({ data }: Props) {
         <div css={postWrapper}>
           <div className="title-wrapper">
             <div className="title">{frontmatter.title}</div>
-            <div className="date">
-              {dayjs(frontmatter.date).format("MMM DD. YYYY")}
-            </div>
+            <div className="date">{dayjs(frontmatter.date).format('MMM DD. YYYY')}</div>
           </div>
           <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
           <Comments repo="ho1234c/hojong-blog" />
         </div>
       </Layout>
     </>
-  )
+  );
 }
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -45,7 +43,7 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 const postWrapper = (theme: Theme) => css`
   padding: 2rem 1.45rem 0;
@@ -106,4 +104,4 @@ const postWrapper = (theme: Theme) => css`
       color: inherit;
     }
   }
-`
+`;

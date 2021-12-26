@@ -1,43 +1,43 @@
-import React, { createRef, useLayoutEffect } from "react"
-import { useTheme } from "@emotion/react"
+import React, { useLayoutEffect, useRef } from 'react';
+import { useTheme } from '@emotion/react';
 
-const src = "https://utteranc.es/client.js"
+const src = 'https://utteranc.es/client.js';
 
 export type CommentsProps = {
-  repo: string
-}
+  repo: string;
+};
 
 const Comments: React.FC<CommentsProps> = React.memo(({ repo }) => {
-  const containerRef = createRef<HTMLDivElement>()
-  const theme = useTheme()
+  const containerRef = useRef<HTMLDivElement>(null);
+  const theme = useTheme();
 
   useLayoutEffect(() => {
-    const element = document.querySelector(".utterances")
+    const element = document.querySelector('.utterances');
     if (element) {
-      element.remove()
+      element.remove();
     }
-    const utterances = document.createElement("script")
+    const utterances = document.createElement('script');
 
     const attributes = {
       src,
       repo,
-      theme: theme.isDarkMode ? "github-dark" : "github-light",
-      "issue-term": "pathname",
-      label: "✨💬 comments ✨",
-      crossOrigin: "anonymous",
-      async: "true",
-    }
+      'theme': theme.isDarkMode ? 'github-dark' : 'github-light',
+      'issue-term': 'pathname',
+      'label': '✨💬 comments ✨',
+      'crossOrigin': 'anonymous',
+      'async': 'true',
+    };
 
     Object.entries(attributes).forEach(([key, value]) => {
-      utterances.setAttribute(key, value)
-    })
+      utterances.setAttribute(key, value);
+    });
 
-    containerRef.current!.appendChild(utterances)
-  }, [repo, theme.isDarkMode])
+    containerRef.current!.appendChild(utterances);
+  }, [containerRef, repo, theme.isDarkMode]);
 
-  return <div ref={containerRef} />
-})
+  return <div ref={containerRef} />;
+});
 
-Comments.displayName = "Utterances"
+Comments.displayName = 'Utterances';
 
-export default Comments
+export default Comments;

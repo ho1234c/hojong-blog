@@ -1,50 +1,39 @@
-import { useEffect, useState } from "react"
-import { css, jsx, useTheme } from "@emotion/react"
-import Layout from "@src/components/layout/layout"
-import Profile from "@src/components/Profile/Profile"
-import WorkIcon from "@src/assets/icon/work.svg"
-import GithubIcon from "@src/assets/icon/github.svg"
-import InstagramIcon from "@src/assets/icon/instagram.svg"
-import CodeIcon from "@src/assets/icon/code.svg"
-import PlantIcon from "@src/assets/icon/plant.svg"
-import MailIcon from "@src/assets/icon/mail.svg"
-import { mq, breakPoint } from "@src/utils/mediaQuery"
+import { useEffect, useState } from 'react';
+import { css } from '@emotion/react';
+import Layout from '@src/components/layout/layout';
+import Profile from '@src/components/Profile/Profile';
+import WorkIcon from '@src/assets/icon/work.svg';
+import GithubIcon from '@src/assets/icon/github.svg';
+import InstagramIcon from '@src/assets/icon/instagram.svg';
+import CodeIcon from '@src/assets/icon/code.svg';
+import PlantIcon from '@src/assets/icon/plant.svg';
+import MailIcon from '@src/assets/icon/mail.svg';
+import { mq, breakPoint } from '@src/utils/mediaQuery';
 
-const isDesktop =
-  typeof window === `undefined`
-    ? false
-    : window.matchMedia(`(min-width: ${breakPoint}px)`).matches
+const isDesktop = typeof window === `undefined` ? false : window.matchMedia(`(min-width: ${breakPoint}px)`).matches;
 
 const AboutMe: React.FC = () => {
-  const [isShowProfile, setIsShowProfile] = useState(() => isDesktop)
+  const [isShowProfile, setIsShowProfile] = useState(() => isDesktop);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsShowProfile(true), 1500)
+    const timeout = setTimeout(() => setIsShowProfile(true), 1500);
 
-    return () => clearTimeout(timeout)
-  }, [isShowProfile])
+    return () => clearTimeout(timeout);
+  }, [isShowProfile]);
 
   return (
     <Layout>
       <div css={aboutMeStyle}>
-        <section className={`profile-wrapper ${isShowProfile ? "show" : ""}`}>
+        <section className={`profile-wrapper ${isShowProfile ? 'show' : ''}`}>
           <div className="profile-frame">
             <Profile />
           </div>
 
           <div className="address">
-            <a
-              href="https://github.com/ho1234c"
-              target="__blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/ho1234c" target="__blank" rel="noopener noreferrer">
               <GithubIcon width="20" height="20" />
             </a>
-            <a
-              href="https://instagram.com/ho1234c?igshid=v6qmm1u6z692"
-              target="__blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://instagram.com/ho1234c?igshid=v6qmm1u6z692" target="__blank" rel="noopener noreferrer">
               <InstagramIcon width="20" height="20" />
             </a>
             <a href="mailto:ho1234c@gmail.com">
@@ -55,9 +44,7 @@ const AboutMe: React.FC = () => {
 
         <section className="description">
           <section>
-            <AnimateText id="first">
-              소프트웨어 엔지니어 정종호 입니다
-            </AnimateText>
+            <AnimateText id="first">소프트웨어 엔지니어 정종호 입니다</AnimateText>
             <AnimateText id="second" begin="0.5s" dur="2s">
               개발과 여행을 좋아하고, 운동과 보드게임을 즐깁니다
             </AnimateText>
@@ -70,9 +57,7 @@ const AboutMe: React.FC = () => {
             </h4>
             <ul>
               <li>
-                <AnimateText id="work-1">
-                  why와 how를 모두 중요히 생각합니다
-                </AnimateText>
+                <AnimateText id="work-1">why와 how를 모두 중요히 생각합니다</AnimateText>
               </li>
               <li>
                 <AnimateText id="work-2" begin="0.5s">
@@ -88,9 +73,7 @@ const AboutMe: React.FC = () => {
             </h4>
             <ul>
               <li>
-                <AnimateText id="life-1">
-                  작은 목표를 세우고 꾸준히 해나가는 것을 잘합니다
-                </AnimateText>
+                <AnimateText id="life-1">작은 목표를 세우고 꾸준히 해나가는 것을 잘합니다</AnimateText>
               </li>
               <li>
                 <AnimateText id="life-2" begin="0.5s" dur="2s">
@@ -112,7 +95,7 @@ const AboutMe: React.FC = () => {
             <ul>
               <li>
                 <AnimateText id="code-1" dur="2s">
-                  명령형보단 선언형을 선호합니다
+                  선언형을 선호합니다
                 </AnimateText>
               </li>
               <li>
@@ -130,25 +113,18 @@ const AboutMe: React.FC = () => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;
 
 const AnimateText: React.FC<{
-  id: string
-  width?: string
-  dur?: string
-  begin?: string
-  fontSize?: string
-}> = ({
-  id,
-  children,
-  dur = "3s",
-  begin = "0s",
-  fontSize = "13",
-  width = "100%",
-}) => (
+  id: string;
+  width?: string;
+  dur?: string;
+  begin?: string;
+  fontSize?: string;
+}> = ({ id, children, dur = '3s', begin = '0s', fontSize = '13', width = '100%' }) => (
   <div>
     <svg
       width={width}
@@ -173,7 +149,7 @@ const AnimateText: React.FC<{
       </text>
     </svg>
   </div>
-)
+);
 
 const aboutMeStyle = css`
   display: flex;
@@ -269,4 +245,4 @@ const aboutMeStyle = css`
       }
     }
   }
-`
+`;

@@ -1,27 +1,22 @@
-import React from "react"
-import { graphql, navigate } from "gatsby"
-import { css, jsx, Theme } from "@emotion/react"
-import dayjs from "dayjs"
-import Layout from "@src/components/layout/layout"
-import { Query } from "@grpaphql-types"
-import { usePosts } from "@src/hooks/usePosts"
+import React from 'react';
+import { graphql, navigate } from 'gatsby';
+import { css, Theme } from '@emotion/react';
+import dayjs from 'dayjs';
+import Layout from '@src/components/layout/layout';
+import { Query } from '@grpaphql-types';
+import { usePosts } from '@src/hooks/usePosts';
 
 const Main: React.FC<{ data: Query }> = ({ data }) => {
-  const { postList, tagList, handleSelectTag, selectedTag } = usePosts(
-    data.allMarkdownRemark.nodes
-  )
+  const { postList, tagList, handleSelectTag, selectedTag } = usePosts(data.allMarkdownRemark.nodes);
 
-  const goTo = (url: string) => navigate(url)
+  const goTo = (url: string) => navigate(url);
 
   return (
     <Layout>
       <div css={wrapperStyle}>
         <section className="tag-container">
           {tagList.length !== 0 && (
-            <div
-              css={[eachTagStyle, !selectedTag && activeTagStyle]}
-              onClick={() => handleSelectTag("")}
-            >
+            <div css={[eachTagStyle, !selectedTag && activeTagStyle]} onClick={() => handleSelectTag('')}>
               all
             </div>
           )}
@@ -36,48 +31,45 @@ const Main: React.FC<{ data: Query }> = ({ data }) => {
           ))}
         </section>
         <section className="main-container">
-          {postList
-            .filter((post) =>
-              selectedTag ? post.frontmatter?.tags?.includes(selectedTag) : true
-            )
-            .map(({ frontmatter }) => (
-              <article
-                onClick={() => goTo(frontmatter?.path!)}
-                key={frontmatter?.title}
-              >
-                <h4 className="title">{frontmatter?.title}</h4>
-                <div className="content">
-                  {dayjs(frontmatter?.date).format("MMM DD. YYYY")}
-                </div>
-                <div className="chip-container">
-                  {frontmatter?.tags!.map((tag) => (
-                    <div className="chip">{tag}</div>
-                  ))}
-                </div>
-              </article>
-            ))}
+          {postList.map(({ frontmatter }) => (
+            <article onClick={() => goTo(frontmatter?.path!)} key={frontmatter?.title}>
+              <h4 className="title">{frontmatter?.title}</h4>
+              <div className="content">{dayjs(frontmatter?.date).format('MMM DD. YYYY')}</div>
+              <div className="chip-container">
+                {frontmatter?.tags?.map((tag, idx) => (
+                  <div className="chip" key={idx}>
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-      nodes {
-        frontmatter {
-          path
-          title
-          date
-          tags
-        }
+    allMarkdownRemark(
+    sort: {fields: frontmatter___date, order: DESC}
+    filter: {frontmatter: {draft: {ne: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        path
+        title
+        date
+        tags
+        draft
       }
     }
   }
-`
+  }
+`;
 
 const eachTagStyle = (theme: Theme) => css`
   display: flex;
@@ -98,11 +90,11 @@ const eachTagStyle = (theme: Theme) => css`
     margin-left: calc(3px);
     margin-right: calc(0.5rem + 3px);
   }
-`
+`;
 
 const activeTagStyle = css`
   font-weight: 900;
-`
+`;
 
 const wrapperStyle = (theme: Theme) => css`
   padding: 0 1.45rem;
@@ -164,4 +156,4 @@ const wrapperStyle = (theme: Theme) => css`
       }
     }
   }
-`
+`;

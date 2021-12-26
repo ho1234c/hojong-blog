@@ -1,12 +1,12 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { css, jsx, ThemeProvider, Theme, Global } from "@emotion/react"
-import Header from "../header/header"
-import { theme as _theme, ColorType } from "@src/theme"
-import DarkModeToggler from "@src/components/DarkModeToggler/DarkModeToggler"
-import { localStorage } from "@src/utils/window"
-import { useSettledTheme } from "./useSettledTheme"
-import "./layout.css"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { css, ThemeProvider, Theme, Global } from '@emotion/react';
+import Header from '../header/header';
+import { theme as _theme } from '@src/theme';
+import DarkModeToggler from '@src/components/DarkModeToggler/DarkModeToggler';
+import { localStorage } from '@src/utils/window';
+import { useSettledTheme } from './useSettledTheme';
+import './layout.css';
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,20 +17,20 @@ const Layout: React.FC = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
-  const { theme, setTheme, isSettled } = useSettledTheme()
+  const { theme, setTheme, isSettled } = useSettledTheme();
 
   const changeMode = (nextChecked: boolean) => {
-    localStorage.setItem("isDarkMode", nextChecked ? "1" : "0")
+    localStorage.setItem('isDarkMode', nextChecked ? '1' : '0');
 
     setTheme({
       color: nextChecked ? _theme.color.dark : _theme.color.light,
       isDarkMode: nextChecked,
-    })
-  }
+    });
+  };
 
-  if (!isSettled) return null
+  if (!isSettled) return null;
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,10 +50,10 @@ const Layout: React.FC = ({ children }) => {
         {children}
       </main>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 
 const mainStyle = (theme: Theme) => css`
   margin: 0 auto;
@@ -61,4 +61,4 @@ const mainStyle = (theme: Theme) => css`
   padding-bottom: 4rem;
   box-sizing: border-box;
   overflow-x: hidden;
-`
+`;

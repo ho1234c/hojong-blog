@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -36,15 +36,15 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
               languageExtensions: [
                 {
-                  language: "superscript",
-                  extend: "javascript",
+                  language: 'superscript',
+                  extend: 'javascript',
                   definition: {
                     superscript_types: /(SuperType)/,
                   },
@@ -56,8 +56,8 @@ module.exports = {
                 },
               ],
               prompt: {
-                user: "root",
-                host: "localhost",
+                user: 'root',
+                host: 'localhost',
                 global: false,
               },
               escapeEntities: {},
@@ -73,25 +73,25 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        "@src": path.join(__dirname, "src"),
+        '@src': path.join(__dirname, 'src'),
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-80649823-3",
+        trackingId: 'UA-80649823-3',
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

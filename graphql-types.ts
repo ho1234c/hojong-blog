@@ -249,9 +249,6 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
-  polyfill?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
-  jsxRuntime?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -674,6 +671,7 @@ export type MarkdownRemarkFrontmatter = {
   path?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  draft?: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -812,9 +810,6 @@ export type QuerySiteArgs = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
-  polyfill?: InputMaybe<BooleanQueryOperatorInput>;
-  pathPrefix?: InputMaybe<StringQueryOperatorInput>;
-  jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -1131,6 +1126,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   path?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
+  draft?: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 export type MarkdownHeadingFilterListInput = {
@@ -1386,6 +1382,7 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___path'
   | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___tags'
+  | 'childrenMarkdownRemark___frontmatter___draft'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -1443,6 +1440,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___tags'
+  | 'childMarkdownRemark___frontmatter___draft'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1983,9 +1981,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author'
   | 'port'
   | 'host'
-  | 'polyfill'
-  | 'pathPrefix'
-  | 'jsxRuntime'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2119,9 +2114,6 @@ export type SiteFilterInput = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
-  polyfill?: InputMaybe<BooleanQueryOperatorInput>;
-  pathPrefix?: InputMaybe<StringQueryOperatorInput>;
-  jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -3233,6 +3225,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___path'
   | 'frontmatter___date'
   | 'frontmatter___tags'
+  | 'frontmatter___draft'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -3400,7 +3393,7 @@ export type Unnamed_2_Query = { site?: { siteMetadata?: { title?: string | null 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = { allMarkdownRemark: { nodes: Array<{ frontmatter?: { path?: string | null | undefined, title?: string | null | undefined, date?: any | null | undefined, tags?: Array<string | null | undefined> | null | undefined } | null | undefined }> } };
+export type Unnamed_3_Query = { allMarkdownRemark: { nodes: Array<{ frontmatter?: { path?: string | null | undefined, title?: string | null | undefined, date?: any | null | undefined, tags?: Array<string | null | undefined> | null | undefined, draft?: boolean | null | undefined } | null | undefined }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null | undefined, width: number, height: number, src: string, srcSet: string };
 

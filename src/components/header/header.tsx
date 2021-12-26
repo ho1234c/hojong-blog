@@ -1,40 +1,37 @@
-import { Link } from "gatsby"
-import { css, Theme } from "@emotion/react"
-import React, { useState, useEffect } from "react"
+import { Link } from 'gatsby';
+import { css, Theme } from '@emotion/react';
+import React, { useState, useEffect } from 'react';
 
 type HeaderProps = {
-  siteTitle: string
-}
+  siteTitle: string;
+};
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const [scrollPos, setScrollPos] = useState(() => 0)
-  const [headerYPos, setHeaderYPos] = useState(() => 0)
+  const [scrollPos, setScrollPos] = useState(() => 0);
+  const [headerYPos, setHeaderYPos] = useState(() => 0);
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY < 0) return
+      if (window.scrollY < 0) return;
 
-      let nextYpos = headerYPos + (scrollPos - window.scrollY)
+      let nextYpos = headerYPos + (scrollPos - window.scrollY);
 
       if (nextYpos <= -80) {
-        nextYpos = -80
+        nextYpos = -80;
       } else if (nextYpos >= 0) {
-        nextYpos = 0
+        nextYpos = 0;
       }
-      setScrollPos(window.scrollY)
-      setHeaderYPos(nextYpos)
-    }
+      setScrollPos(window.scrollY);
+      setHeaderYPos(nextYpos);
+    };
 
-    window.addEventListener("scroll", onScroll)
+    window.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [headerYPos, scrollPos])
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [headerYPos, scrollPos]);
 
   return (
-    <header
-      css={headerWrapper}
-      style={{ transform: `translateY(${headerYPos}px)` }}
-    >
+    <header css={headerWrapper} style={{ transform: `translateY(${headerYPos}px)` }}>
       <div className="menu">
         <div className="go-to-main">
           <Link to="/">{props.siteTitle}</Link>
@@ -44,15 +41,13 @@ const Header: React.FC<HeaderProps> = (props) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 const headerWrapper = (theme: Theme) => css`
-  box-shadow: ${theme.isDarkMode
-    ? "1px 2px 18px rgb(255 255 255 / 10%)"
-    : "1px 2px 18px rgb(0 0 0 / 10%)"};
+  box-shadow: ${theme.isDarkMode ? '1px 2px 18px rgb(255 255 255 / 10%)' : '1px 2px 18px rgb(0 0 0 / 10%)'};
   width: 100%;
   z-index: 1;
   backdrop-filter: blur(3px);
@@ -82,4 +77,4 @@ const headerWrapper = (theme: Theme) => css`
       font-size: 14px;
     }
   }
-`
+`;
