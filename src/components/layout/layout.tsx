@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx, ThemeProvider, Theme, Global } from "@emotion/react"

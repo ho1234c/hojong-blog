@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { useEffect, useState } from "react"
 import { css, jsx, useTheme } from "@emotion/react"
 import Layout from "@src/components/layout/layout"

@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import { Link } from "gatsby"
-import { css, jsx, Theme } from "@emotion/react"
+import { css, Theme } from "@emotion/react"
 import React, { useState, useEffect } from "react"
 
 type HeaderProps = {

@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import React from "react"
 import { css, jsx, useTheme } from "@emotion/react"
 import LightModeIcon from "@src/assets/icon/light-mode.svg"
