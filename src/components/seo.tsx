@@ -22,6 +22,7 @@ const SEO: React.FC<SEOProps> = ({ title }) => {
             title
             description
             author
+            image
           }
         }
       }
@@ -53,6 +54,10 @@ const SEO: React.FC<SEOProps> = ({ title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: '/og_image.png'
         },
         {
           name: `twitter:card`,

@@ -3403,7 +3403,7 @@ export type SiteTitleQueryQuery = { site?: { siteMetadata?: { title?: string | n
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { site?: { siteMetadata?: { title?: string | null | undefined, description?: string | null | undefined, author?: string | null | undefined } | null | undefined } | null | undefined };
+export type Unnamed_2_Query = { site?: { siteMetadata?: { title?: string | null | undefined, description?: string | null | undefined, author?: string | null | undefined, image?: string | null | undefined } | null | undefined } | null | undefined };
 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
