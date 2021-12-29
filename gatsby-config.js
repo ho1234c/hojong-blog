@@ -68,7 +68,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 680,
-              wrapperStyle: 'border-radius: 4px; overflow: hidden; vertical-align: bottom;',
+              wrapperStyle: 'border-radius: 4px; overflow: hidden;',
             },
           },
           `gatsby-remark-copy-linked-files`,

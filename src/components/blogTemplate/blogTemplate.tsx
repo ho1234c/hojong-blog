@@ -105,6 +105,7 @@ const postWrapper = (theme: Theme) => css`
 
     p img {
       width: 100%;
+      vertical-align: bottom;
     }
 
     .language-text {
