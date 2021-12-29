@@ -3,8 +3,9 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: `HOOO`,
-    description: `blog`,
+    description: `정종호의 블로그입니다`,
     author: `Jongho Jeong`,
+    image: '/og_image.png',
   },
   plugins: [
     `gatsby-plugin-pnpm`,
