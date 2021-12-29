@@ -66,9 +66,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 960,
+              maxWidth: 680,
+              wrapperStyle: 'border-radius: 4px; overflow: hidden;',
             },
           },
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },

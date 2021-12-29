@@ -89,14 +89,22 @@ const postWrapper = (theme: Theme) => css`
       word-break: break-all;
     }
 
-    img {
-      width: 100%;
-    }
-
     @media only screen and (max-device-width: 480px) {
       code {
         font-size: 14px;
       }
+    }
+
+    p:first-of-type {
+      text-indent: 1em;
+    }
+
+    h1+ p, h2 + p, h3 + p {
+      text-indent: 1em;
+    }
+
+    p img {
+      width: 100%;
     }
 
     .language-text {
