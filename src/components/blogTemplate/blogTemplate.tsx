@@ -103,6 +103,10 @@ const postWrapper = (theme: Theme) => css`
       text-indent: 1em;
     }
 
+    p {
+      word-break: keep-all;
+    }
+
     p img {
       width: 100%;
       vertical-align: bottom;
