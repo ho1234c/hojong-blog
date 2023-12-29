@@ -64,7 +64,10 @@ const AboutMe: React.FC = () => {
                   귀찮음을 해결하면서 동기부여됩니다
                 </AnimateText>
                 <AnimateText id="work-2" begin="0.5s">
-                  언제든 내가 틀릴 수 있음을 염두하며 이미 결정된것에 최선을 다합니다
+                  언제든 내가 틀릴 수 있음을 염두하며
+                </AnimateText>
+                <AnimateText id="work-2" begin="0.5s" style={{ marginTop: '-10px' }}>
+                  이미 결정된것에 최선을 다합니다
                 </AnimateText>
               </li>
             </ul>
@@ -127,8 +130,9 @@ const AnimateText: React.FC<{
   dur?: string;
   begin?: string;
   fontSize?: string;
-}> = ({ id, children, dur = '3s', begin = '0s', fontSize = '13', width = '100%' }) => (
-  <div>
+  style?: React.CSSProperties;
+}> = ({ id, children, dur = '3s', begin = '0s', fontSize = '13', width = '100%', style }) => (
+  <div style={style}>
     <svg
       width={width}
       height="20"
