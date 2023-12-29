@@ -63,6 +63,9 @@ const AboutMe: React.FC = () => {
                 <AnimateText id="work-2" begin="0.5s">
                   귀찮음을 해결하면서 동기부여됩니다
                 </AnimateText>
+                <AnimateText id="work-2" begin="0.5s">
+                  언제든 내가 틀릴 수 있음을 염두하며 이미 결정된것에 최선을 다합니다
+                </AnimateText>
               </li>
             </ul>
           </section>
@@ -82,7 +85,7 @@ const AboutMe: React.FC = () => {
               </li>
               <li>
                 <AnimateText id="life-3" begin="1s" dur="2s">
-                  여행과 사유로부터 영감과 통찰을 얻습니다
+                  일상과 사유로부터 영감과 통찰을 얻습니다
                 </AnimateText>
               </li>
             </ul>
@@ -105,7 +108,7 @@ const AboutMe: React.FC = () => {
               </li>
               <li>
                 <AnimateText id="code-3" begin="0.5s">
-                  리팩토링을 좋아합니다
+                  리팩토링의 필요를 이해하고 짧은 주기로 수행합니다
                 </AnimateText>
               </li>
             </ul>
